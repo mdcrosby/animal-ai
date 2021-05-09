@@ -9,7 +9,6 @@ from animalai.envs.environment import AnimalAIEnvironment
 
 """
 
-
 def load_config_and_play(configuration_file: str) -> None:
     """
     Loads a configuration file for a single arena and lets you play manually
