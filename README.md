@@ -11,11 +11,11 @@
 
 ## Overview
 
-The [Animal-AI Testbed](http://animalaiolympics.com/AAI) is used to study the cognitive abilities of artificial agents and provides research tools for building AI systems with the common sense physical reasoning abilities found in many animals, but that are not required to solve many existing AI benchmarks.
+The [Animal-AI Testbed](http://animalaiolympics.com/AAI) is used to study the cognitive abilities of artificial agents. It provides a research environment to help build and test AI systems with the common sense physical reasoning abilities found in many animals. Most modern AI benchmarks are solvable without common sense reasoning whereas Animal-AI is designed to isolate and measure such abilities.
 
-The environment will be undergoing heavy development over the next few years. This initial 3.0.0 release is designed to be as backwards compatible as possible with the old version. Internally, AAI has been rewritten, but externally it should look roughly the same. The only new features (for now) are adding agent global location and the ability for raycasting. Future releases plan to include a flag to be compatible with the 3.0.0 version, but, due to the large number of changes planned, it is likely that exact continuity between releases will not be maintained.
+The environment will be undergoing heavy development over the next few years. This initial 3.0.0 release is designed to work just like the old version. Internally, AAI has been rewritten, but externally it should work in roughly the same way. The only new features (for now) are adding agent global location and raycasts to the possible observations. Future releases plan to include a flag to be compatible with the 3.0.0 version, but, due to the large number of changes planned, it is unlikely that exact continuity between releases will be maintained.
 
-This repo contains the [training environment](animalai), a [training library](animalai_train) as well as [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
+This repo contains the [training environment](animalai), a [training library](animalai_train) as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
 
 The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs). This version uses release 1 (0.16.1). In the future we will upgrade to release 2.
 
