@@ -11,7 +11,7 @@ environment_path = "env/AnimalAI"
 arena_config_path = "train_mlagents_arenas.yml"
 run_id = "train_ml_agents"
 base_port = 5005
-number_of_environments = 4
+number_of_environments = 1
 number_of_arenas_per_environment = 8
 
 args = RunOptionsAAI(

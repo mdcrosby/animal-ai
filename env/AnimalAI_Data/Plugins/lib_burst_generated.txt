@@ -4,7 +4,7 @@ Library: lib_burst_generated
 --target=X64_SSE2
 --dump=Function
 --float-precision=Standard
---compilation-defines=UNITY_2020_3_6
+--compilation-defines=UNITY_2020_3_8
 --compilation-defines=UNITY_2020_3
 --compilation-defines=UNITY_2020
 --compilation-defines=UNITY_5_3_OR_NEWER
@@ -104,24 +104,24 @@ Library: lib_burst_generated
 --compilation-defines=ENABLE_XR_MODULE
 --compilation-defines=USING_ANIMATION_MODULE
 --compilation-defines=USING_PHYSICS2D_MODULE
---output=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Plugins\lib_burst_generated
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.ML-Agents.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.Runtime.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Barracuda.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Burst.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.ML-Agents.CommunicatorObjects.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Barracuda.BurstBLAS.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
---assembly-folder=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\
+--output=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Plugins/lib_burst_generated
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/UnityEngine.UI.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.ML-Agents.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Core.Runtime.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Barracuda.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Timeline.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Mathematics.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Burst.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.ML-Agents.CommunicatorObjects.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Barracuda.BurstBLAS.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll
+--assembly-folder=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Barracuda.BurstCPUOps+NegJob, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Barracuda.BurstCPUOps+NegJob&, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--fc61e71f150cd57b3d9c719fb7024480
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Barracuda.BurstCPUOps+CeilJob, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Barracuda.BurstCPUOps+CeilJob&, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--350675ccf9f41cf3fc6c4892a413e5e1
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Barracuda.BurstCPUOps+ClipJob, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Barracuda.BurstCPUOps+ClipJob&, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--a88b279e12e0818419e26c2c93c578cf
@@ -174,7 +174,7 @@ Library: lib_burst_generated
 --target=AVX2
 --dump=Function
 --float-precision=Standard
---compilation-defines=UNITY_2020_3_6
+--compilation-defines=UNITY_2020_3_8
 --compilation-defines=UNITY_2020_3
 --compilation-defines=UNITY_2020
 --compilation-defines=UNITY_5_3_OR_NEWER
@@ -274,24 +274,24 @@ Library: lib_burst_generated
 --compilation-defines=ENABLE_XR_MODULE
 --compilation-defines=USING_ANIMATION_MODULE
 --compilation-defines=USING_PHYSICS2D_MODULE
---output=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Plugins\lib_burst_generated
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.ML-Agents.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.Runtime.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Barracuda.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Burst.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.ML-Agents.CommunicatorObjects.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.Barracuda.BurstBLAS.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
---root-assembly=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
---assembly-folder=C:\Users\mdcro\Documents\GitHub\AnimalAI\Temp\StagingArea\Data\Managed\
+--output=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Plugins/lib_burst_generated
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/UnityEngine.UI.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.ML-Agents.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Core.Runtime.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Barracuda.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Timeline.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Mathematics.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Burst.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.ML-Agents.CommunicatorObjects.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.Barracuda.BurstBLAS.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+--root-assembly=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll
+--assembly-folder=/home/macro/AAI3/AAI3-UnityDev/AnimalAI/Temp/StagingArea/Data/Managed/
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Barracuda.BurstCPUOps+NegJob, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Barracuda.BurstCPUOps+NegJob&, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--fc61e71f150cd57b3d9c719fb7024480
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Barracuda.BurstCPUOps+CeilJob, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Barracuda.BurstCPUOps+CeilJob&, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--350675ccf9f41cf3fc6c4892a413e5e1
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Barracuda.BurstCPUOps+ClipJob, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Barracuda.BurstCPUOps+ClipJob&, Unity.Barracuda, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--a88b279e12e0818419e26c2c93c578cf

@@ -38,7 +38,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         n_arenas: int = 1,
         play: bool = False,
         arenas_configurations: ArenaConfig = None,
-        inference: bool = False,
+        inference: bool = True,
         resolution: int = None,
         grayscale: bool = False,
         side_channels: Optional[List[SideChannel]] = None,
@@ -52,7 +52,6 @@ class AnimalAIEnvironment(UnityEnvironment):
         self.arenas_parameters_side_channel = None
 
         self.configure_side_channels(self.side_channels)
-
         super().__init__(
             file_name=file_name,
             worker_id=worker_id,
@@ -114,13 +113,13 @@ class AnimalAIEnvironment(UnityEnvironment):
             self.arenas_parameters_side_channel.send_raw_data(
                 bytearray(arenas_configurations_proto_string)
             )
-        try:
-            super().reset()
-        except UnityTimeOutException as timeoutException:
-            if self.play:
-                pass
-            else:
-                raise timeoutException
+            try:
+                super().reset()
+            except UnityTimeOutException as timeoutException:
+                if self.play:
+                    pass
+                else:
+                    raise timeoutException
 
     def close(self):
         if self.play:
@@ -133,9 +132,10 @@ class AnimalAIEnvironment(UnityEnvironment):
     @staticmethod
     def executable_args(
         n_arenas: int = 1,
-        play: bool = False,
-        resolution: int = 84,
+        play: bool = True,
+        resolution: int = 150,
         grayscale: bool = False,
+        useRayCasts: bool = True,
     ) -> List[str]:
         args = ["--playerMode"]
         if play:
@@ -143,10 +143,12 @@ class AnimalAIEnvironment(UnityEnvironment):
         else:
             args.append("0")
         args.append("--numberOfArenas")
-        args.append(str(n_arenas))
+        args.append(str(n_arenas))  
         if resolution:
             args.append("--resolution")
             args.append(str(resolution))
         if grayscale:
             args.append("--grayscale")
+        if useRayCasts:
+            args.append("--useRayCasts")
         return args

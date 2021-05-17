@@ -21,6 +21,7 @@ def load_config_and_play(configuration_file: str) -> None:
     )  # use a random port to allow relaunching the script rapidly
     configuration = ArenaConfig(configuration_file)
 
+    print("initializaing AAI environment")
     environment = AnimalAIEnvironment(
         file_name=env_path,
         base_port=port,

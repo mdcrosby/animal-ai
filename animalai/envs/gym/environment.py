@@ -3,11 +3,9 @@ from gym import spaces
 from typing import Union, List
 
 from gym_unity.envs import (
-    UnityEnv,
+    UnityToGymWrapper,
     UnityGymException,
     GymStepResult,
-    AgentIdIndexMapper,
-    BatchedStepResult,
     ActionFlattener,
     logger,
 )
@@ -16,7 +14,7 @@ from animalai.envs.environment import AnimalAIEnvironment
 from animalai.envs.arena_config import ArenaConfig
 
 
-class AnimalAIGym(UnityEnv):
+class AnimalAIGym(UnityToGymWrapper):
     def __init__(
         self,
         environment_filename: str,
@@ -57,16 +55,16 @@ class AnimalAIGym(UnityEnv):
         )
 
         # Take a single step so that the brain information will be sent over
-        if not self._env.get_agent_groups():
+        if not self._env.get_behavior_names():
             self._env.step()
 
         self.visual_obs = None
         self._n_agents = -1
 
-        self.agent_mapper = AgentIdIndexMapper()
+        # self.agent_mapper = AgentIdIndexMapper()
 
         # Save the step result from the last time all Agents requested decisions.
-        self._previous_step_result: BatchedStepResult = None
+        # self._previous_step_result: BatchedStepResult = None
         self._multiagent = n_arenas > 1
         self._flattener = None
         # Hidden flag used by Atari environments to determine if the game is over
@@ -74,15 +72,15 @@ class AnimalAIGym(UnityEnv):
         self._allow_multiple_visual_obs = n_arenas > 1
 
         # Check brain configuration
-        if len(self._env.get_agent_groups()) != 1:
+        if len(self._env.get_behavior_names()) != 1:
             raise UnityGymException(
                 "There can only be one brain in a UnityEnvironment "
                 "if it is wrapped in a gym."
             )
 
-        self.brain_name = self._env.get_agent_groups()[0]
+        self.brain_name = self._env.get_behavior_names()[0]
         self.name = self.brain_name
-        self.group_spec = self._env.get_agent_group_spec(self.brain_name)
+        self.group_spec = self._env.get_behavior_spec(self.brain_name)
 
         if self._get_n_vis_obs() == 0:
             raise UnityGymException(
@@ -94,10 +92,10 @@ class AnimalAIGym(UnityEnv):
 
         # Check for number of agents in scene.
         self._env.reset()
-        step_result = self._env.get_step_result(self.brain_name)
-        self._check_agents(step_result.n_agents())
-        self._previous_step_result = step_result
-        self.agent_mapper.set_initial_agents(list(self._previous_step_result.agent_id))
+        step_result = self._env.get_steps(self.brain_name)
+        # self._check_agents(step_result[0].agent)
+        # self._previous_step_result = step_result
+        # self.agent_mapper.set_initial_agents(list(self._previous_step_result.agent_id))
 
         # Set observation and action spaces
         if self.group_spec.is_action_discrete():
@@ -155,7 +153,7 @@ class AnimalAIGym(UnityEnv):
 
     def _step(
         self, needs_reset: bool = False, arenas_configurations: ArenaConfig = None
-    ) -> BatchedStepResult:
+    ):
         if needs_reset:
             self._env.reset(arenas_configurations=arenas_configurations)
         else:
