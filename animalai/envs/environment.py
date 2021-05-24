@@ -36,9 +36,9 @@ class AnimalAIEnvironment(UnityEnvironment):
         seed: int = 0,
         # docker_training: bool = False, # Will be removed in final version
         n_arenas: int = 1,
-        play: bool = False,
+        play: bool = True,
         arenas_configurations: ArenaConfig = None,
-        inference: bool = True,
+        inference: bool = False,
         resolution: int = None,
         grayscale: bool = False,
         side_channels: Optional[List[SideChannel]] = None,
@@ -52,6 +52,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         self.arenas_parameters_side_channel = None
 
         self.configure_side_channels(self.side_channels)
+
         super().__init__(
             file_name=file_name,
             worker_id=worker_id,

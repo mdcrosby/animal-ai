@@ -1,5 +1,5 @@
 env/*
 mlenvs/
 testing/
-summaries/
+results/*
 .vscode/
