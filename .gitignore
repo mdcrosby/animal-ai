@@ -3,3 +3,4 @@ mlenvs/
 testing/
 results/*
 .vscode/
+oldscripts/
