@@ -13,11 +13,11 @@
 
 The [Animal-AI Testbed](http://animalaiolympics.com/AAI) is used to study the cognitive abilities of artificial agents. It provides a research environment to help build and test AI systems with the common sense physical reasoning abilities found in many animals. Most modern AI benchmarks are solvable without common sense reasoning whereas Animal-AI is designed to isolate and measure such abilities.
 
-The environment will be undergoing heavy development over the next few years. This initial 3.0.0 release is designed to work just like the old version. Internally, AAI has been rewritten, but externally it should work in roughly the same way. The only new features (for now) are adding agent global location and raycasts to the possible observations. Future releases plan to include a flag to be compatible with the 3.0.0 version, but, due to the large number of changes planned, it is unlikely that exact continuity between releases will be maintained.
+The environment will be undergoing heavy development over the next few years. This initial 3.0.0 release is designed to work just like the old version. Internally, AAI has been rewritten, but externally it should look roughly the same for now. The only new features (in 3.0.0) are adding agent global location and raycasts to the possible observations. Due to the large number of changes planned, it is unlikely that exact continuity between releases will be maintained going forwards.
 
-This repo contains the [training environment](animalai), a [training library](animalai_train) as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
+This repo contains python scripts for interacting with the [training environment](animalai) as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
 
-The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs). This version uses release 2 (0.26.0).
+The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs). This version uses release 2 (python package 0.26.0).
 
 ## Requirements
 
@@ -29,11 +29,11 @@ First **download the environment** for your system:
 | Mac | TODO |
 | Linux |  TODO |
 
-Unzip the **entire content** of the archive to the `examples/env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`.
+Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`.
 
 The Animal-AI packages are currently only tested on linux with python 3.8
 
-**The Unity source files** for the environment will be made available later. If you need them for your research please get in contact. 
+**The Unity Project** for the environment will be made available later. If you would like access for your research please get in contact. 
 
 ## Manual Control
 
@@ -82,5 +82,6 @@ Intelligent Agents.](https://arxiv.org/abs/1809.02627) *arXiv preprint arXiv:180
   - New features
     - Added raycast observations
     - Added agent global position to observations
-  - Upgraded to ML-Agents release 1 (0.16.1)
+  - Upgraded to ML-Agents release 2 (0.26.0)
+  - Switched to URP
     
