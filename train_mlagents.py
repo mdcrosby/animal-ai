@@ -1,4 +1,3 @@
-from mlagents.trainers.trainer_util import load_config
 from animalai.envs.arena_config import ArenaConfig
 
 from animalai_train.run_options_aai import RunOptionsAAI
@@ -15,7 +14,7 @@ number_of_environments = 1
 number_of_arenas_per_environment = 8
 
 args = RunOptionsAAI(
-    trainer_config=load_config(trainer_config_path),
+    trainer_config=trainer_config_path,
     env_path=environment_path,
     run_id=run_id,
     base_port=base_port,
@@ -24,4 +23,4 @@ args = RunOptionsAAI(
     n_arenas_per_env=number_of_arenas_per_environment,
 )
 
-run_training_aai(0, args)
+mlagents-learn <trainer-config-file> --env=<env_name> --run-id=<run-identifier>

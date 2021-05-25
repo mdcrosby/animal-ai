@@ -17,7 +17,7 @@ The environment will be undergoing heavy development over the next few years. Th
 
 This repo contains the [training environment](animalai), a [training library](animalai_train) as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
 
-The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs). This version uses release 1 (0.16.1). In the future we will upgrade to release 2.
+The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs). This version uses release 2 (0.26.0).
 
 ## Requirements
 

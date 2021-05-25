@@ -30,7 +30,7 @@ def load_config_and_play(configuration_file: str) -> None:
     )
 
     try:
-        while environment.proc1:
+        while environment._process:
             continue
     except KeyboardInterrupt:
         pass

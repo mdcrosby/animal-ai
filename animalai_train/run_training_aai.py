@@ -8,7 +8,7 @@ from mlagents.trainers.stats import (
     GaugeWriter,
 )
 from mlagents_envs.side_channel.engine_configuration_channel import EngineConfig
-from mlagents.trainers.trainer_util import TrainerFactory
+from mlagents.trainers.trainer import TrainerFactory
 from mlagents.trainers.learn import write_timing_tree
 
 from animalai.envs.environment import AnimalAIEnvironment

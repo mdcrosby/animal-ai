@@ -60,7 +60,7 @@ class AnimalAIEnvironment(UnityEnvironment):
             seed=seed,
             no_graphics=False,
             timeout_wait=self.timeout,
-            args=args,
+            additional_args=args,
             side_channels=self.side_channels,
         )
         self.reset(arenas_configurations)
@@ -125,8 +125,8 @@ class AnimalAIEnvironment(UnityEnvironment):
     def close(self):
         if self.play:
             self.communicator.close()
-            if self.proc1:
-                self.proc1.kill()
+            if self._process:
+                self._process.kill()
         else:
             super().close()
 

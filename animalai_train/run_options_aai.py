@@ -3,7 +3,7 @@ from animalai.envs.arena_config import ArenaConfig
 
 
 class RunOptionsAAI(NamedTuple):
-    trainer_config: Dict = None
+    trainer_config: str = None
     debug: bool = False
     seed: int = 0
     env_path: Optional[str] = None
