@@ -25,7 +25,9 @@ def load_config(configuration_file: str) -> None:
         base_port=port,
         arenas_configurations=configuration,
         play=False,
+        useCamera=False,
         useRayCasts=True,
+        raysPerSide=1,
     )
 
     # Below are sample methods from the Unity low level python API

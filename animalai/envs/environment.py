@@ -39,13 +39,16 @@ class AnimalAIEnvironment(UnityEnvironment):
         play: bool = True,
         arenas_configurations: ArenaConfig = None,
         inference: bool = False,
+        useCamera: bool = True,
         resolution: int = None,
         grayscale: bool = False,
         useRayCasts: bool = False,
+        raysPerSide: int = 2,
+        rayMaxDegrees: int = 60,        
         side_channels: Optional[List[SideChannel]] = None,
     ):
 
-        args = self.executable_args(n_arenas, play, resolution, grayscale, useRayCasts)
+        args = self.executable_args(n_arenas, play, useCamera, resolution, grayscale, useRayCasts, raysPerSide, rayMaxDegrees)
         self.play = play
         self.inference = inference
         self.timeout = 10 if play else 60
@@ -131,13 +134,16 @@ class AnimalAIEnvironment(UnityEnvironment):
         else:
             super().close()
 
-    @staticmethod
+    @staticmethod #n_arenas, play, useCamera, resolution, grayscale, useRayCasts, raysPerSide, rayMaxDegrees
     def executable_args(
         n_arenas: int = 1,
         play: bool = True,
+        useCamera: bool = True,
         resolution: int = 150,
         grayscale: bool = False,
         useRayCasts: bool = True,
+        raysPerSide: int = 2,
+        rayMaxDegrees: int = 60,
     ) -> List[str]:
         args = ["--playerMode"]
         if play:
@@ -146,6 +152,8 @@ class AnimalAIEnvironment(UnityEnvironment):
             args.append("0")
         args.append("--numberOfArenas")
         args.append(str(n_arenas))  
+        if useCamera:
+            args.append("--useCamera")
         if resolution:
             args.append("--resolution")
             args.append(str(resolution))
@@ -153,4 +161,8 @@ class AnimalAIEnvironment(UnityEnvironment):
             args.append("--grayscale")
         if useRayCasts:
             args.append("--useRayCasts")
+        args.append("--raysPerSide")
+        args.append(str(raysPerSide))
+        args.append("--rayMaxDegrees")
+        args.append(str(rayMaxDegrees))
         return args
