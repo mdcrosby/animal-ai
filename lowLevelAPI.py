@@ -44,7 +44,7 @@ def load_config(configuration_file: str) -> None:
     
 
 
-
+# Loads a random competition configuration unless a link to the file system is used as an argument.
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         configuration_file = sys.argv[1]
