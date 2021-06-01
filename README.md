@@ -27,7 +27,7 @@ First **download the environment** for your system:
 | --- | --- |
 | Windows | TODO |
 | Mac | TODO |
-| Linux |  TODO |
+| Linux |  [zip](https://drive.google.com/file/d/1kW5alFTZHp5WK_HiQX4jlSM6F3XT10qu/view?usp=sharing) |
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`.
 
