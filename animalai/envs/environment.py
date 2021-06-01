@@ -46,6 +46,8 @@ class AnimalAIEnvironment(UnityEnvironment):
         raysPerSide: int = 2,
         rayMaxDegrees: int = 60,        
         side_channels: Optional[List[SideChannel]] = None,
+        captureFrameRate: int = 0,
+        targetFrameRate: int = 60,
     ):
 
         args = self.executable_args(n_arenas, play, useCamera, resolution, grayscale, useRayCasts, raysPerSide, rayMaxDegrees)
@@ -54,6 +56,8 @@ class AnimalAIEnvironment(UnityEnvironment):
         self.timeout = 10 if play else 60
         self.side_channels = side_channels if side_channels else []
         self.arenas_parameters_side_channel = None
+        self.captureFrameRate = captureFrameRate
+        self.targetFrameRate = targetFrameRate
 
         self.configure_side_channels(self.side_channels)
         
@@ -93,8 +97,8 @@ class AnimalAIEnvironment(UnityEnvironment):
                 height=self.WINDOW_HEIGHT.play,
                 quality_level=self.QUALITY_LEVEL.play,
                 time_scale=self.TIMESCALE.play,
-                target_frame_rate=self.TARGET_FRAME_RATE.play,
-                capture_frame_rate=0,
+                target_frame_rate=self.targetFrameRate,
+                capture_frame_rate=self.captureFrameRate,
             )
         else:
             engine_configuration = EngineConfig(
@@ -102,8 +106,8 @@ class AnimalAIEnvironment(UnityEnvironment):
                 height=self.WINDOW_HEIGHT.train,
                 quality_level=self.QUALITY_LEVEL.train,
                 time_scale=self.TIMESCALE.train,
-                target_frame_rate=self.TARGET_FRAME_RATE.train,
-                capture_frame_rate=0,
+                target_frame_rate=self.targetFrameRate,
+                capture_frame_rate=self.captureFrameRate,
             )
         engine_configuration_channel = EngineConfigurationChannel()
         engine_configuration_channel.set_configuration(engine_configuration)
