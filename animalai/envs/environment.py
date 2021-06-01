@@ -41,10 +41,11 @@ class AnimalAIEnvironment(UnityEnvironment):
         inference: bool = False,
         resolution: int = None,
         grayscale: bool = False,
+        useRayCasts: bool = False,
         side_channels: Optional[List[SideChannel]] = None,
     ):
 
-        args = self.executable_args(n_arenas, play, resolution, grayscale)
+        args = self.executable_args(n_arenas, play, resolution, grayscale, useRayCasts)
         self.play = play
         self.inference = inference
         self.timeout = 10 if play else 60
@@ -52,7 +53,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         self.arenas_parameters_side_channel = None
 
         self.configure_side_channels(self.side_channels)
-
+        
         super().__init__(
             file_name=file_name,
             worker_id=worker_id,
