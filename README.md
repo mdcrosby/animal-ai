@@ -25,7 +25,7 @@ First **download the environment** for your system:
 
 | OS | Environment link |
 | --- | --- |
-| Windows | TODO |
+| Windows | [zip](https://drive.google.com/file/d/1wGM6hpBAxxhVDdSUybQwa3bhFkmEk_6D/view?usp=sharing) |
 | Mac | TODO |
 | Linux |  [zip](https://drive.google.com/file/d/1kW5alFTZHp5WK_HiQX4jlSM6F3XT10qu/view?usp=sharing) |
 
