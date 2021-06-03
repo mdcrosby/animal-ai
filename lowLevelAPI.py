@@ -34,8 +34,8 @@ def load_config(configuration_file: str) -> None:
         play=False,
         useCamera=False,
         # resolution=84,
-        useRayCasts=False,
-        # raysPerSide=1,
+        useRayCasts=True,
+        raysPerSide=3,
         targetFrameRate= 30,
         captureFrameRate = 30, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
     )
