@@ -23,21 +23,17 @@ The environment is built using [Unity ml-agents](https://github.com/Unity-Techno
 
 First **download the environment** for your system:
 
-| OS | Environment link |
-| --- | --- |
-| Windows | [zip](https://drive.google.com/file/d/1wGM6hpBAxxhVDdSUybQwa3bhFkmEk_6D/view?usp=sharing) |
-| Mac | [zip](https://drive.google.com/file/d/1RzctTahWiCzqup9AGfkWjEIjTtHYCKYq/view?usp=sharing) NOTE: Untested. I don't have access to a Mac :S |
-| Linux |  [zip](https://drive.google.com/file/d/1kW5alFTZHp5WK_HiQX4jlSM6F3XT10qu/view?usp=sharing) |
+Environments for Linux, Windows, and Mac can be found [here](https://drive.google.com/drive/folders/1CkqmZ_rxsvPa8aTS3qhllTvb9uDCjRvg?usp=sharing). Please note that the Mac version is currently completely untested as I don't have access to a Mac :S Latest pre-release update version 3-0-0-a: improves raycast observations. Links to previous builds will be available once we reach the first official release.
 
-Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`.
+Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and any other folders from the zip.
 
-The Animal-AI packages are currently only tested on linux with python 3.8
+The Animal-AI packages are currently tested on linux with python 3.8
 
 **The Unity Project** for the environment will be made available later. If you would like access for your research please get in contact. 
 
 ## Manual Control
 
-If you launch the environment directly from the executable or through the `load_config_and_play,py` script it will launch
+If you launch the environment directly from the executable or through the `play_config.py` script it will launch
  in player mode. Here you can control the agent with the following:
 
 | Keyboard Key  | Action    |
@@ -48,6 +44,10 @@ If you launch the environment directly from the executable or through the `load_
 | D   | turn agent right    |
 | C   | switch camera       |
 | R   | reset environment   |
+
+## More to come with the official release.
+
+For now many of the documentation from [version 2](https://github.com/beyretb/AnimalAI-Olympics) may be a useful reference until everything is fully migrated and updated. Further the documentation for [mlagents](https://github.com/Unity-Technologies/ml-agents) is very good and includes a lot of useful examples.
 
 ## Citing
 If you use the Animal-AI environment in your work you can cite the environment paper:
@@ -78,10 +78,9 @@ Intelligent Agents.](https://arxiv.org/abs/1809.02627) *arXiv preprint arXiv:180
 ## Version History
 
 - v3.0.0: 
-  - initial release
+  - initial release (TO COME - currently on 3.0.0-a private prerelease)
   - New features
     - Added raycast observations
     - Added agent global position to observations
   - Upgraded to ML-Agents release 2 (0.26.0)
-  - Switched to URP
-    
+  - Switched to URP    
