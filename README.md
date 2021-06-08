@@ -23,7 +23,9 @@ The environment is built using [Unity ml-agents](https://github.com/Unity-Techno
 
 First **download the environment** for your system:
 
-Environments for Linux, Windows, and Mac can be found [here](https://drive.google.com/drive/folders/1CkqmZ_rxsvPa8aTS3qhllTvb9uDCjRvg?usp=sharing). Please note that the Mac version is currently completely untested as I don't have access to a Mac :S Latest pre-release update version 3-0-0-a: improves raycast observations. Links to previous builds will be available once we reach the first official release.
+**Environments for Linux, Windows, and Mac can be found [here](https://drive.google.com/drive/folders/1CkqmZ_rxsvPa8aTS3qhllTvb9uDCjRvg?usp=sharing).**
+
+Please note that the Mac version is currently completely untested as I don't have access to a Mac :S Latest pre-release update version 3-0-0-a: improves raycast observations. Links to previous builds will be available once we reach the first official release.
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and any other folders from the zip.
 
