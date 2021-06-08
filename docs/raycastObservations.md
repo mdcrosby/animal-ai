@@ -1,4 +1,12 @@
-## Using Raycast observations
+# Agent Observations
+
+This page details the observations available to the agent. Currently only the Raycast observations are covered in detail.
+
+## Camera Observations
+
+With the camera enabled (via useCamera) the agent receives 1st-person pixel observations of its environment with configurable resolution.
+
+## Raycast observations
 
 Raycasts are implemented to make it easier to work with a wide range of algorithms within AnimalAI. They are not designed to compete with pixel inputs as they naturally contain much less information about the environment. Nevertheless, they can be extremely useful for protyping and for testing certain cognitive abilities such as episodic memory or when analysing network dynamics compared to performance on many tasks. 
 
@@ -25,3 +33,7 @@ For each ray:
 * The next element is the normalised distance to the object that was hit.
 
 So the full observation space is of size 8 * (2*raysPerSide + 1)
+
+## Velocity and Position
+
+The agent also receives a vector of length 6 containing its velocity and (global) position.

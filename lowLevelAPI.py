@@ -1,8 +1,10 @@
+from animalai.envs.actions import AAIActions
 from dis import dis
 import sys
 import random
 import os
 import numpy as np
+import time
 
 from mlagents_envs.base_env import ActionTuple
 
@@ -35,32 +37,35 @@ def load_config(configuration_file: str) -> None:
         useCamera=False,
         # resolution=84,
         useRayCasts=True,
-        raysPerSide=3,
-        targetFrameRate= 30,
-        captureFrameRate = 30, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
+        raysPerSide=1,
+        rayMaxDegrees = 30,
+        targetFrameRate= 60,
+        captureFrameRate = 60, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
     )
-    
-    # reset the environment
-    env.reset() 
+   
+    env.reset()
 
-    #list the behaviour name (by default should be AnimalAI?team=0)
-    print(list(env.behavior_specs.keys()))
+    #list the behaviour name (by default should be AnimalAI?team=0    
     behavior = list(env.behavior_specs.keys())[0]
-    # Behavior and ActionSpec
-    print(env.behavior_specs.get(behavior))
-
+    print(behavior)
+    acts = AAIActions() # Easier to use actions directly 
+    
     # print out the observations from the environment
     # will depend on the options selected for camera and raycasts
     # will always include velocity and position
-    print(env.get_steps(behavior)[0].obs) 
-    
-    act_upleft = np.ones((1,2), dtype=np.int32)
-    act = ActionTuple(discrete=act_upleft)
+    # print(env.get_steps(behavior)[0].obs) 
+    totalreward = 0
 
-    while(True):
-        # print(env.get_steps(behavior)[0].obs) 
-        env.set_actions(behavior, act)
+    while(True): #Run a single episode with the agent just moving forwards.
+        dec, term = env.get_steps(behavior)
+        totalreward += dec.reward #update the reward
+        if len(term) > 0: #the episode has ended
+            print(totalreward)
+            break
+        env.set_actions(behavior, acts.FORWARDS)
         env.step()
+       
+
         
 
 
