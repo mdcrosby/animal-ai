@@ -42,18 +42,14 @@ def load_config(configuration_file: str) -> None:
         targetFrameRate= 60,
         captureFrameRate = 60, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
     )
+    acts = AAIActions() # Helper to reference actions directly - you probably won't need this.
    
     env.reset()
-
-    #list the behaviour name (by default should be AnimalAI?team=0    
-    behavior = list(env.behavior_specs.keys())[0]
-    print(behavior)
-    acts = AAIActions() # Easier to use actions directly 
     
-    # print out the observations from the environment
-    # will depend on the options selected for camera and raycasts
-    # will always include velocity and position
-    # print(env.get_steps(behavior)[0].obs) 
+    behavior = list(env.behavior_specs.keys())[0] # by default should be AnimalAI?team=0
+    
+    # print(env.get_steps(behavior)[0].obs) print out the observations
+
     totalreward = 0
 
     while(True): #Run a single episode with the agent just moving forwards.
@@ -65,8 +61,6 @@ def load_config(configuration_file: str) -> None:
         env.set_actions(behavior, acts.FORWARDS)
         env.step()
        
-
-        
 
 
 # Loads a random competition configuration unless a link to a config is given as an argument.

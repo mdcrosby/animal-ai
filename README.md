@@ -1,21 +1,24 @@
-# Animal-AI 3.0.0
+# Animal-AI 3 (BETA)
 
 <p align="center">
   <img height="300" src="figs/steampunkFOURcrop.png">
 </p>
 
+## Overview
+
+The [Animal-AI Testbed](http://animalaiolympics.com/AAI) is used to study the cognitive abilities of artificial agents. It provides a research environment to help build and test AI systems with the common sense physical reasoning abilities found in many animals. Most modern AI benchmarks are solvable without common sense reasoning whereas Animal-AI is designed to isolate and measure such abilities.
 
 | ![](figs/animal-cyl-fail.gif) | ![](figs/agent-cyl-fail.gif) |
 |---|---|
 | ![](figs/animal-cyl-pass.gif) | ![](figs/agent-cyl-pass.gif) |
 
-## Overview
+## Version
 
-The [Animal-AI Testbed](http://animalaiolympics.com/AAI) is used to study the cognitive abilities of artificial agents. It provides a research environment to help build and test AI systems with the common sense physical reasoning abilities found in many animals. Most modern AI benchmarks are solvable without common sense reasoning whereas Animal-AI is designed to isolate and measure such abilities.
+The environment will be undergoing heavy development over the next few years. This initial Beta release is designed to work just like the old version. The only new features are upgrading to MLAgents 2.0 and adding agent global location and raycasts to the observation space. Due to the large number of changes planned, it is unlikely that exact continuity between releases will be maintained going forwards.
 
-The environment will be undergoing heavy development over the next few years. This initial 3.0.0 release is designed to work just like the old version. Internally, AAI has been rewritten, but externally it should look roughly the same for now. The only new features (in 3.0.0) are adding agent global location and raycasts to the possible observations. Due to the large number of changes planned, it is unlikely that exact continuity between releases will be maintained going forwards.
+## This Repo
 
-This repo contains python scripts for interacting with the [training environment](animalai) as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
+This repo contains some introductory python scripts for interacting with the training environment as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched. More tutorials and documentation (as well as environment features) will be added as we approach 3.0.0.
 
 The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs). This version uses release 2 (python package 0.26.0).
 
@@ -25,11 +28,11 @@ First **download the environment** for your system:
 
 **Environments for Linux, Windows, and Mac can be found [here](https://drive.google.com/drive/folders/1CkqmZ_rxsvPa8aTS3qhllTvb9uDCjRvg?usp=sharing).**
 
-Please note that the Mac version is currently completely untested as I don't have access to a Mac :S Latest pre-release update version 3-0-0-a: improves raycast observations. Links to previous builds will be available once we reach the first official release.
+Current version 3-0-0-a.
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and any other folders from the zip.
 
-The Animal-AI packages are currently tested on linux with python 3.8
+The Animal-AI environment and packages are currently tested on linux with python 3.8 but should also work on Windows and Mac.
 
 **The Unity Project** for the environment will be made available later. If you would like access for your research please get in contact. 
 
@@ -79,10 +82,8 @@ Intelligent Agents.](https://arxiv.org/abs/1809.02627) *arXiv preprint arXiv:180
 
 ## Version History
 
-- v3.0.0: 
-  - initial release (TO COME - currently on 3.0.0-a private prerelease)
+- v3.0.0-a beta release
+  - Upgraded to ML-Agents release 2 (0.26.0)
   - New features
     - Added raycast observations
     - Added agent global position to observations
-  - Upgraded to ML-Agents release 2 (0.26.0)
-  - Switched to URP    
