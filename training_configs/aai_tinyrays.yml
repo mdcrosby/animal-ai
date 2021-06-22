@@ -1,0 +1,7 @@
+arenaConfig: "competition_configurations/4-3-1.yml"
+useCamera: false
+resolution: 32
+grayscale: false
+useRayCasts: true
+raysPerSide: 2
+rayMaxDegrees: 60

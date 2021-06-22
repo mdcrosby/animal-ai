@@ -1,12 +1,7 @@
 from animalai.envs.actions import AAIActions
-from dis import dis
 import sys
 import random
 import os
-import numpy as np
-import time
-
-from mlagents_envs.base_env import ActionTuple
 
 from animalai.envs.arena_config import ArenaConfig
 from animalai.envs.environment import AnimalAIEnvironment
@@ -42,6 +37,7 @@ def load_config(configuration_file: str) -> None:
         targetFrameRate= 60,
         captureFrameRate = 60, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
     )
+    
     acts = AAIActions() # Helper to reference actions directly - you probably won't need this.
    
     env.reset()

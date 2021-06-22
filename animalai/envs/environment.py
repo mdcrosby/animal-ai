@@ -30,6 +30,8 @@ class AnimalAIEnvironment(UnityEnvironment):
 
     def __init__(
         self,
+        additional_args: List[str] = None,
+        log_folder: str = "",
         file_name: Optional[str] = None,
         worker_id: int = 0,
         base_port: int = 5005,
@@ -48,6 +50,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         side_channels: Optional[List[SideChannel]] = None,
         captureFrameRate: int = 0,
         targetFrameRate: int = 60,
+        no_graphics: bool = False,
     ):
 
         args = self.executable_args(n_arenas, play, useCamera, resolution, grayscale, useRayCasts, raysPerSide, rayMaxDegrees)
@@ -66,10 +69,11 @@ class AnimalAIEnvironment(UnityEnvironment):
             worker_id=worker_id,
             base_port=base_port,
             seed=seed,
-            no_graphics=False,
+            no_graphics=no_graphics,
             timeout_wait=self.timeout,
             additional_args=args,
             side_channels=self.side_channels,
+            log_folder=log_folder,
         )
         self.reset(arenas_configurations)
 
