@@ -43,7 +43,7 @@ def load_config(configuration_file: str) -> None:
     env.reset()
     
     behavior = list(env.behavior_specs.keys())[0] # by default should be AnimalAI?team=0
-    
+
     # print(env.get_steps(behavior)[0].obs) print out the observations
 
     totalreward = 0

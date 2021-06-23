@@ -38,7 +38,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         seed: int = 0,
         # docker_training: bool = False, # Will be removed in final version
         n_arenas: int = 1,
-        play: bool = True,
+        play: bool = False,
         arenas_configurations: ArenaConfig = None,
         inference: bool = False,
         useCamera: bool = True,
