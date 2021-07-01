@@ -15,8 +15,7 @@ The environment was ported to ml-agents 2.0. Raycast observations added and ensu
 - [x] Switch from reward system to health system (from DRL perspective functionally similar but unlocks more tasks and better integration with a continual learning setting)
 - [x] Add decaying rewards
 - [x] Improve Hotzone/death zone graphics and allow scaling
-- [x] Add python wrappers - [] Improve look and feel of AAI-as-game for human players.
-for all main usecases (play, openAIgym, lowlevelAPI, mlagents-learn)
+- [x] Add python wrappers for all main usecases (play, openAIgym, lowlevelAPI, mlagents-learn)
 
 Previous setting had an abstract system where food = +ve reward and time = -ve reward. This will be converted to decaying health that must be maintained by seeking our reward. Many tasks are functionally identical, but this setup is better for future tasks and also persistent survival. Other additions are improvements to the environment that go with this change and the initial setup of scripts as tutorials for using different training settings.
 
