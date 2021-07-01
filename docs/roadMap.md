@@ -1,6 +1,6 @@
-# AnimalAI RoadMap to 3.0
+# AnimalAI RoadMap to 3.0 (last updated 01/07/2021)
 
-A (tentative) roadmap for AnimalAI.
+A (tentative) roadmap for AnimalAI (AAI) to get from where it is now to a tool for supporting and tracking AI progress towards currently unsolved cognitive capabilities. We want AAI to support interdisciplinary research to help better understand human, animal, and artificial cognition. We also want it to be a useful resource for making AI progress on these unsolved problems and also act as a way of tracking such progress so that we can stay on top of any AI breakthroughs that may have important societal implications.
 
 ## [x] 2.1 Initial Port + RayCasts
 
@@ -12,12 +12,13 @@ The environment was ported to ml-agents 2.0. Raycast observations added and ensu
 
 ## [In progress] 2.2 Health and Basic Scripts
 
-- [x] Switch from reward system to health system (from DRL perspective functionally similar but unlocks more tasks later)
+- [x] Switch from reward system to health system (from DRL perspective functionally similar but unlocks more tasks and better integration with a continual learning setting)
 - [x] Add decaying rewards
 - [x] Improve Hotzone/death zone graphics and allow scaling
-- [x] Add python wrappers for all main usecases (play, openAIgym, lowlevelAPI, mlagents-learn)
+- [x] Add python wrappers - [] Improve look and feel of AAI-as-game for human players.
+for all main usecases (play, openAIgym, lowlevelAPI, mlagents-learn)
 
-Previous setting had an abstract system where food = +ve reward and time = -ve reward. This will be converted to decaying health that must be maintained by seeking our reward. Many tasks are functionally identical, but this setup is better for future tasks and also persistent survival. Other additions are simple improvements that go with this change. Initial setup of scripts for different training settings.
+Previous setting had an abstract system where food = +ve reward and time = -ve reward. This will be converted to decaying health that must be maintained by seeking our reward. Many tasks are functionally identical, but this setup is better for future tasks and also persistent survival. Other additions are improvements to the environment that go with this change and the initial setup of scripts as tutorials for using different training settings.
 
 ## [] 2.3 Experiment and Object Improvements
 
@@ -63,7 +64,7 @@ Multiagent support is a very obvious area of cognitive intelligence that is curr
 
 ## [] 2.x
 
-There are many other features/possibilities on the private ToDo list and in the possibility space that could be added depending on progress, interest, collaborations, and funding received.
+There are many other features/possibilities on the private ToDo list and in the possibility space that could be added depending on progress, interest, collaborations, and funding.
 
 ## [] 3.0 Bounties.
 
