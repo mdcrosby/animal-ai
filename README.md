@@ -1,6 +1,6 @@
 # Animal-AI 3 (BETA)
 
-The [Animal-AI Testbed](http://animalaiolympics.com/AAI) is used to study the cognitive abilities of artificial agents. It provides a research environment to help build and test AI systems with the common sense physical reasoning abilities found in many animals. Most modern AI benchmarks are solvable without common sense reasoning whereas Animal-AI is designed to isolate and measure such abilities.
+AAI supports interdisciplinary research to help better understand human, animal, and artificial cognition. It also supports AI research towards unlocking cognitive capabilities and will also help track progress towards those with societal implications.
 
 | ![](figs/animal-cyl-fail.gif) | ![](figs/agent-cyl-fail.gif) |
 |---|---|
