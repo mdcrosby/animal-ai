@@ -16,7 +16,6 @@ class PlayTrain(NamedTuple):
     play: int
     train: int
 
-
 class AnimalAIEnvironment(UnityEnvironment):
     # Default values for configuration parameters of the environment, can be changed if needed
     # Increasing the timescale value for training might speed up the process on powefull machines

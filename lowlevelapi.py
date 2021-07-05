@@ -57,14 +57,12 @@ def load_config(configuration_file: str) -> None:
         env.set_actions(behavior, acts.FORWARDS)
         env.step()
        
-
-
 # Loads a random competition configuration unless a link to a config is given as an argument.
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         configuration_file = sys.argv[1]
     else:
-        competition_folder = "competition_configurations/"
+        competition_folder = "configs/competition/"
         configuration_files = os.listdir(competition_folder)
         configuration_random = random.randint(0, len(configuration_files))
         configuration_file = (

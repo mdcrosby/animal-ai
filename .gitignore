@@ -2,6 +2,7 @@ env/*
 mlenvs/
 testing/
 results/*
+logs/
 .vscode/
 oldscripts/
 gymAAI.py

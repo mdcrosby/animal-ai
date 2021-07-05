@@ -2,6 +2,7 @@ import numpy as np
 from enum import Enum
 from mlagents_envs.base_env import ActionTuple
 
+##A class to help access the discrete action space of AAI environment.
 class AAIActions():
     def __init__(self, no_agents=1):
         self.NOOP = ActionTuple(continuous=np.zeros((no_agents,0)), discrete=np.array([0,0], dtype=np.int32))
