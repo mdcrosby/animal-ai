@@ -5,20 +5,22 @@ arenas:
     t: 250
     items:
     - !Item
-      name: DeathZone
+      name: Wall
       positions:
-      - !Vector3 {x: 20, y: 0, z: 20}
+      - !Vector3 {x: 35, y: 0, z: 35}
       rotations: [45]
+      colors: 
+      - !RGB {r: 153, g: 153, b: 153}
       sizes:
-      - !Vector3 {x: 5, y: 1, z: 5}
+      - !Vector3 {x: 5, y: 3, z: 1}
     - !Item
       name: GoodGoal
       positions:
-      - !Vector3 {x: 20, y: 0, z: 25}      
+      - !Vector3 {x: 36, y: 0, z: 36}      
       sizes:
       - !Vector3 {x: 1, y: 1, z: 1}
     - !Item
       name: Agent
       positions:
-      - !Vector3 {x: 20, y: 0, z: 15}
-      rotations: [0]
+      - !Vector3 {x: 1, y: 0, z: 1}
+      rotations: [15]

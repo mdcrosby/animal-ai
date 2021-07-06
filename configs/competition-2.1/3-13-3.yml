@@ -5,20 +5,22 @@ arenas:
     t: 250
     items:
     - !Item
-      name: DeathZone
+      name: CylinderTunnel
       positions:
       - !Vector3 {x: 20, y: 0, z: 20}
-      rotations: [45]
+      rotations: [135]
       sizes:
-      - !Vector3 {x: 5, y: 1, z: 5}
+      - !Vector3 {x: 4, y: 4, z: 20}
+      colors:
+      - !Vector3 {x: 153, y: 153, z: 153}
     - !Item
       name: GoodGoal
       positions:
-      - !Vector3 {x: 20, y: 0, z: 25}      
+      - !Vector3 {x: 20, y: 0, z: 20}      
       sizes:
       - !Vector3 {x: 1, y: 1, z: 1}
     - !Item
       name: Agent
-      positions:
-      - !Vector3 {x: 20, y: 0, z: 15}
-      rotations: [0]
+      positions: 
+      - !Vector3 {x: 5, y: 0, z: 5}
+      rotations: [45]

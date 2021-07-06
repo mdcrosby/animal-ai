@@ -3,6 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 0
     t: 250
+    blackouts: [-20]
     items:
     - !Item
       name: DeathZone
@@ -10,7 +11,7 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 20}
       rotations: [45]
       sizes:
-      - !Vector3 {x: 5, y: 1, z: 5}
+      - !Vector3 {x: 5, y: 0, z: 5}
     - !Item
       name: GoodGoal
       positions:
