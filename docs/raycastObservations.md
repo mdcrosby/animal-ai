@@ -17,7 +17,7 @@ There are four relevant arguments to pass to the environment when using raycasts
 * raysPerSide: sets the number of rays to cast to the left and right of the central one. e.g raysPerSide=2 means 5 rays total
 * rayMaxDegrees: sets the maximum degrees for the left/right rays. e.g. 90 means the agent casts rays exactly to the left and right. other rays are spaced equally between the center and the max.
 
-There are currently 5 types of objects that the rays report. This is intentional to keep the observation space down, but does limit the types of problem solvable. In order they are:
+There are currently 6 types of objects that the rays report. This is intentional to keep the observation space down, but does limit the types of problem solvable. In order they are:
 * arena: this is the outside of the arena and should usually be hit by a ray if it misses other objects (this is useful for the distance)
 * Immovable: Inner Walls, Cylinders, ramps i.e. all the objects listed under immovable [here](definitionsOfObjects.md)
 * Movable: Cardboxes and L/U objects i.e. all the objects listed as movable [here](definitionsOfObjects.md)
