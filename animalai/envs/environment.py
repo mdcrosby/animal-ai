@@ -144,7 +144,7 @@ class AnimalAIEnvironment(UnityEnvironment):
     @staticmethod #n_arenas, play, useCamera, resolution, grayscale, useRayCasts, raysPerSide, rayMaxDegrees
     def executable_args(
         n_arenas: int = 1,
-        play: bool = True,
+        play: bool = False,
         useCamera: bool = True,
         resolution: int = 150,
         grayscale: bool = False,

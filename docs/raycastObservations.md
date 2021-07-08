@@ -34,6 +34,16 @@ For each ray:
 
 So the full observation space is of size 8 * (2*raysPerSide + 1)
 
+Note that Unity implementation of rays orders the central ray first and then each ray (left or negative offset first) in increasing distance from the centre as follows:
+
+<code>
+  1 0 2
+   \|/
+3 --@-- 4
+</code>
+
+
+
 ## Velocity and Position
 
 The agent also receives a vector of length 6 containing its velocity and (global) position.
