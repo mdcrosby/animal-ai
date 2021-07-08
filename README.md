@@ -22,6 +22,13 @@ First **download the environment** for your system:
 
 | OS | Environment link |
 | --- | --- |
+| Windows | [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.1.zip) |
+| Mac | [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.1.zip) |
+| Linux |  [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.1.zip) |
+
+OLD Verions
+| OS | Environment link |
+| --- | --- |
 | Windows | [download v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.zip) |
 | Mac | [download v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.zip) |
 | Linux |  [download v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.zip) |
@@ -78,6 +85,8 @@ Intelligent Agents.](https://arxiv.org/abs/1809.02627) *arXiv preprint arXiv:180
 
 ## Version History
 
+- v2.1.1 bugfix
+  - Fixed raycast length being less then diagonal length of standard arena
 - v2.1 beta release
   - Upgraded to ML-Agents release 2 (0.26.0)
   - New features
