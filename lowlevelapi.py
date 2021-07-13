@@ -11,7 +11,7 @@ def run_agent_single_config(configuration_file: str) -> None:
     """
     Loads a configuration file for a single arena and gives some example usage of mlagent python Low Level API
     See https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Python-API.md for details.
-    For demo purposes uses a tragically incompentent braitenberg vehicle-inspired agent
+    For demo purposes uses a simple braitenberg vehicle-inspired agent that solves most tasks from category 1.
     """
     env_path = "env/AnimalAI"
     
@@ -22,23 +22,36 @@ def run_agent_single_config(configuration_file: str) -> None:
     env = AnimalAIEnvironment(
         file_name=env_path,
         arenas_configurations=configuration,
+        seed = 0, # random.randint(0, 1000000),
         play=False,
-        useCamera=False,
-        # resolution=84, # not needed without camera
+        useCamera=True,
+        resolution=32,
         useRayCasts=True,
         raysPerSide=int((totalRays-1)/2),
+        decisionPeriod=12, # The number of Academy steps before the agent is asked for a new action
         rayMaxDegrees = 30,
         targetFrameRate= 60,
         captureFrameRate = 60, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
     )
-    acts = AAIActions() # Helper to reference actions directly (you probably won't need this).
-    braitenbergAgent = Braitenberg(totalRays) #A simple BraitenBerg Agent that heads towards food items.
 
     env.reset()
-    
+ 
+    braitenbergAgent = Braitenberg(totalRays) #A simple BraitenBerg Agent that heads towards food items.
+
     behavior = list(env.behavior_specs.keys())[0] # by default should be AnimalAI?team=0
 
-    # print(env.get_steps(behavior)[0].obs) #print out the observations
+    # # # # # # # # # #
+    # # Observation examples
+    # obs = (env.get_steps(behavior)[0].obs)
+    # print(obs)
+    # o = env.getDict(obs)
+    # print(o["camera"])
+    # print(o["rays"])
+    # print("health: " + str(o["health"]))
+    # print("velocity: " + str(o["velocity"]))
+    # print("position: " + str(o["position"]))
+    # sys.exit()
+    # # # # # # # # # #
 
     totalreward = 0
     while(True): #Run a single episode with the Braitenberg-style agent
@@ -48,7 +61,7 @@ def run_agent_single_config(configuration_file: str) -> None:
             print("Episode reward: " + str(totalreward))
             break
         totalreward += dec.reward #update the reward
-        raycasts = dec.obs[0][0] # Get the raycast data
+        raycasts = env.getDict(dec.obs)["rays"] # Get the raycast data
         # print(braitenbergAgent.prettyPrint(raycasts)) #print raycasts in more readable format
         action = braitenbergAgent.get_action(raycasts)
         env.set_actions(behavior, action.action_tuple)
@@ -66,3 +79,4 @@ if __name__ == "__main__":
             competition_folder + configuration_files[configuration_random]
         )
     run_agent_single_config(configuration_file=configuration_file)
+    

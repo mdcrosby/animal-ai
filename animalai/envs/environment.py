@@ -1,6 +1,6 @@
+from animalai.envs.raycastparser import RayCastParser
 import uuid
-from typing import NamedTuple
-from typing import Optional, List
+from typing import NamedTuple, Dict, Optional, List
 from mlagents_envs.environment import UnityEnvironment
 from mlagents_envs.rpc_communicator import UnityTimeOutException
 from mlagents_envs.side_channel.raw_bytes_channel import RawBytesChannel
@@ -45,14 +45,34 @@ class AnimalAIEnvironment(UnityEnvironment):
         grayscale: bool = False,
         useRayCasts: bool = False,
         raysPerSide: int = 2,
-        rayMaxDegrees: int = 60,        
+        rayMaxDegrees: int = 60,       
+        decisionPeriod: int = 3, 
         side_channels: Optional[List[SideChannel]] = None,
         captureFrameRate: int = 0,
         targetFrameRate: int = 60,
         no_graphics: bool = False,
     ):
-
-        args = self.executable_args(n_arenas, play, useCamera, resolution, grayscale, useRayCasts, raysPerSide, rayMaxDegrees)
+        self.obsdict = {
+            "camera": [],
+            "rays": [],
+            "health": [],
+            "velocity": [],
+            "position": [],
+        }
+        self.useCamera = useCamera
+        self.useRayCasts = useRayCasts
+        # if(self.useRayCasts):
+        #     self.rayParser = RayCastParser()
+        args = self.executable_args(
+            n_arenas, 
+            play,
+            useCamera, 
+            resolution, 
+            grayscale, 
+            useRayCasts, 
+            raysPerSide, 
+            rayMaxDegrees, 
+            decisionPeriod)
         self.play = play
         self.inference = inference
         self.timeout = 10 if play else 60
@@ -132,14 +152,28 @@ class AnimalAIEnvironment(UnityEnvironment):
                     pass
                 else:
                     raise timeoutException
-
-    def close(self):
-        if self.play:
-            self.communicator.close()
-            if self._process:
-                self._process.kill()
         else:
-            super().close()
+            super().reset()
+
+    def getDict(self, obs) -> Dict:
+        """Parse the observation:
+        input: the observation directly from AAI
+        output: a dictionary with keys: ["camera", "rays", "health", "velocity", "position"] """
+        intrinsicobs = 0
+        if(self.useCamera):
+            intrinsicobs = intrinsicobs+1
+            self.obsdict["camera"] = obs[0][0]
+            if(self.useRayCasts):
+                intrinsicobs = intrinsicobs+1
+                self.obsdict["rays"] = obs[1][0]
+        elif(self.useRayCasts):
+            intrinsicobs = intrinsicobs+1
+            self.obsdict["rays"] = obs[0][0]
+        
+        self.obsdict["health"] = obs[intrinsicobs][0][0]
+        self.obsdict["velocity"] = obs[intrinsicobs][0][1:4]
+        self.obsdict["position"] = obs[intrinsicobs][0][4:7]
+        return self.obsdict
 
     @staticmethod #n_arenas, play, useCamera, resolution, grayscale, useRayCasts, raysPerSide, rayMaxDegrees
     def executable_args(
@@ -151,6 +185,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         useRayCasts: bool = True,
         raysPerSide: int = 2,
         rayMaxDegrees: int = 60,
+        decisionPeriod: int = 3,
     ) -> List[str]:
         args = ["--playerMode"]
         if play:
@@ -172,4 +207,6 @@ class AnimalAIEnvironment(UnityEnvironment):
         args.append(str(raysPerSide))
         args.append("--rayMaxDegrees")
         args.append(str(rayMaxDegrees))
+        args.append("--decisionPeriod")
+        args.append(str(decisionPeriod))
         return args
