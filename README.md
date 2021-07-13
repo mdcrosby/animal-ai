@@ -8,7 +8,7 @@ AAI supports interdisciplinary research to help better understand human, animal,
 
 ## Version
 
-The environment will be undergoing heavy development over the next few years. The only new features in this Beta release (v2.1) are upgrading to MLAgents 2.0 and adding agent global location and raycasts to the observation space and it should be functionally similar to the [old version](https://github.com/beyretb/AnimalAI-Olympics). Due to the large number of changes planned, it is unlikely that continuity between releases will be maintained going forwards.
+The environment will be undergoing heavy development over the next few years. Currently on version 2.2.0 you can see the roadmap towards the next major release [here](docs/roadMap.md).
 
 ## This Repo
 
@@ -19,6 +19,12 @@ The environment is built using [Unity ml-agents](https://github.com/Unity-Techno
 ## Requirements
 
 First **download the environment** for your system:
+
+| OS | Environment link |
+| --- | --- |
+| Windows | [download v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.0.zip) |
+| Mac | [download v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.0.zip) |
+| Linux |  [download v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.0.zip) |
 
 | OS | Environment link |
 | --- | --- |
@@ -85,6 +91,15 @@ Intelligent Agents.](https://arxiv.org/abs/1809.02627) *arXiv preprint arXiv:180
 
 ## Version History
 
+- v2.2.0 Health and Basic Scripts
+  - Switched to health-based system (rewards remain the same).
+  - Updated overlay in play mode.
+  - Allow 3D hot zones and death zones and make them 3D by default in old configs.
+  - Added rewards that grow/decay (currently not configurable but will be added in next update).
+  - Added basic Gym Wrapper.
+  - Added basic heuristic agent for benchmarking and testing.
+  - Improved all other python scripts.
+  - Fixed a reset environment bug when resetting during training.
 - v2.1.1 bugfix
   - Fixed raycast length being less then diagonal length of standard arena
 - v2.1 beta release
