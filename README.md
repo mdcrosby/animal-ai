@@ -20,25 +20,11 @@ The environment is built using [Unity ml-agents](https://github.com/Unity-Techno
 
 First **download the environment** for your system:
 
-| OS | Environment link |
-| --- | --- |
-| Windows | [download v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.0.zip) |
-| Mac | [download v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.0.zip) |
-| Linux |  [download v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.0.zip) |
-
-OLD Verions
-
-| OS | Environment link |
-| --- | --- |
-| Windows | [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.1.zip) |
-| Mac | [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.1.zip) |
-| Linux |  [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.1.zip) |
-
-| OS | Environment link |
-| --- | --- |
-| Windows | [download v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.zip) |
-| Mac | [download v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.zip) |
-| Linux |  [download v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.zip) |
+| OS | Environment link | Old Versions |
+| --- | --- | --- |
+| Linux |  [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.0.zip) | [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.zip) |
+| Mac | [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.0.zip) | [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.zip) |
+| Windows | [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.0.zip) | [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.zip) |
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and *any other folders* in the same directory in the zip file.
 
