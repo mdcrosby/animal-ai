@@ -26,13 +26,14 @@ First **download the environment** for your system:
 | Mac | [download v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.0.zip) |
 | Linux |  [download v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.0.zip) |
 
+OLD Verions
+
 | OS | Environment link |
 | --- | --- |
 | Windows | [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.1.zip) |
 | Mac | [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.1.zip) |
 | Linux |  [download v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.1.zip) |
 
-OLD Verions
 | OS | Environment link |
 | --- | --- |
 | Windows | [download v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.zip) |
