@@ -87,6 +87,7 @@ Intelligent Agents.](https://arxiv.org/abs/1809.02627) *arXiv preprint arXiv:180
   - Added basic heuristic agent for benchmarking and testing.
   - Improved all other python scripts.
   - Fixed a reset environment bug when resetting during training.
+  - Added the ability to set the DecisionPeriod (frameskip) when instantiating and environment.
 - v2.1.1 bugfix
   - Fixed raycast length being less then diagonal length of standard arena
 - v2.1 beta release
