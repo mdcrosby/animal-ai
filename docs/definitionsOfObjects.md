@@ -161,7 +161,7 @@ Moving food with positive reward (non-terminating). Starts by moving in the dire
 A red zone with reward -1 that terminates the episode on contact.
 
 * name: `DeathZone`
-* size range `(1,0,1)-(40,0,40)` **the deathzone is always flat and located on the ground**
+* size range `(1,0.5,1)-(40,10,40)`
 * terminates an episode
 * cannot change color
 
@@ -170,7 +170,7 @@ A red zone with reward -1 that terminates the episode on contact.
 An orange zone with reward `min(-10/T,-1e-5)` (or `-1e-5` if `T=0`) that **does not** end an episode
         
 * name: `HotZone`
-* size range `(1,0,1)-(40,0,40)` **the hotzone is always flat and located on the ground**
+* size range `(1,0.5,1)-(40,10,40)`
 * does not terminate and episode
 * cannot change color
 * if a `DeathZone` and a `HotZone` overlap the `DeathZone` prevails
