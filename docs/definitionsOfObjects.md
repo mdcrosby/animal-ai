@@ -171,6 +171,6 @@ An orange zone with reward `min(-10/T,-1e-5)` (or `-1e-5` if `T=0`) that **does 
         
 * name: `HotZone`
 * size range `(1,0.5,1)-(40,10,40)`
-* does not terminate and episode
+* does not terminate an episode
 * cannot change color
 * if a `DeathZone` and a `HotZone` overlap the `DeathZone` prevails

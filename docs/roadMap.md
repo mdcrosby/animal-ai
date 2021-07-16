@@ -8,15 +8,15 @@ A (tentative) roadmap for AnimalAI (AAI) to get from where it is now to a tool f
 - [x] Port basic python scripts from ml-agents 0.15 to 2.0
 - [x] Add RayCast observations
 
-The environment was ported to ml-agents 2.0. Raycast observations added and ensured roughly backwards compatible with 2.0.
+The environment was ported to ml-agents 2.0. Raycast observations added and ensured to be roughly backwards compatible with 2.0.
 
 ## 2.2 Health and Basic Scripts (Released 13/07/2021)
 
-- [x] Switch from reward system to health system (from DRL perspective functionally similar but unlocks more tasks and better integration with a continual learning setting)
-- [x] Add decaying rewards
-- [x] Improve Hotzone/death zone graphics and allow scaling
-- [x] Add/improve python wrappers for all main usecases (play, openAIgym, lowlevelAPI, mlagents-learn)
-- [x] Add heuristic agent for testing/debugging
+- [x] Switched from reward system to health system (from DRL perspective functionally similar but unlocks more tasks and better integration with a continual learning setting)
+- [x] Added decaying rewards
+- [x] Improved Hotzone/Deathzone graphics and allow scaling
+- [x] Added/improved python wrappers for all main usecases (play, openAIgym, lowlevelAPI, mlagents-learn)
+- [x] Added heuristic agent for testing/debugging
 - [x] Improved play mode overlay
 
 Previous setting had an abstract system where food = +ve reward and time = -ve reward. This will be converted to decaying health that must be maintained by seeking our reward. Many tasks are functionally identical, but this setup is better for future tasks and also persistent survival. Other additions are improvements to the environment that go with this change and the initial setup of scripts as tutorials for using different training settings.
@@ -27,7 +27,7 @@ Previous setting had an abstract system where food = +ve reward and time = -ve r
 - [ ] Can change starting velocities of objects
 - [ ] Better support for randomisation of starting values in config files
 - [ ] Flag for 'test-only' where physics can be broken
-- [ ] test-only objects appearing/changing after given times
+- [ ] Test-only objects appearing/changing after given times
 - [ ] Textures on objects
 - [ ] Containers (with/without wheels)
 - [ ] Adjustable arena size

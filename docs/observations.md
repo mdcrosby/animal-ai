@@ -10,7 +10,7 @@ With the camera enabled (via useCamera) the agent receives 1st-person pixel obse
 
 ## Raycast observations
 
-Raycasts are implemented to make it easier to work with a wide range of algorithms within AnimalAI. They are not designed to compete with pixel inputs as they naturally contain much less information about the environment. Nevertheless, they can be extremely useful for protyping and for testing certain cognitive abilities or when analysing network dynamics compared to performance on many tasks. They can also be used as an auxilliary input or to help learn a more symbolic-like representation of the environment.
+Raycasts are implemented to make it easier to work with a wide range of algorithms within AnimalAI. They are not designed to compete with pixel inputs as they naturally contain much less information about the environment. Nevertheless, they can be extremely useful for prototyping and for testing certain cognitive abilities or when analysing network dynamics compared to performance on many tasks. They can also be used as an auxilliary input or to help learn a more symbolic-like representation of the environment.
 
 There are four relevant arguments to pass to the environment when using raycasts. See the lowLevelAPI.py script for examples.
 * useCamera: set to false if you do not also want pixel observations
@@ -47,4 +47,4 @@ AnimalAI contains a [helper class](../animalai/envs/raycastparser.py) as a start
 
 ## Health, Velocity and Position
 
-The agent also receives a vector of length 7 containing its health (1 float) velocity (x, y, z) and (global) position (x, y, z).
+The agent also receives a vector of length 7 containing its health (1 float), velocity (x, y, z), and (global) position (x, y, z).

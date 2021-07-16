@@ -44,7 +44,7 @@ same manner, using a set of parameters for each item:
 
 - `name`: the name of the object you want to spawn.
 - `positions`: a list of `Vector3` positions within the arena where you want to spawn items, if the list 
-is empty the position will be sampled randomly in the aren. Any position dimension set to -1 will spawn randomly.
+is empty the position will be sampled randomly in the arena. Any position dimension set to -1 will spawn randomly.
 - `sizes`: a list of `Vector3` sizes, if the list is empty the size will be sampled randomly. You can set any size to -1 to spawn randomly along that dimension only.
 - `rotations`: a list of `float` in the range `[0,360]`, if the list is empty the rotation is sampled randomly.
 - `colors`: a list of `RGB` values (integers in the range `[0,255]`), if the list is empty the color is sampled randomly.
@@ -67,7 +67,7 @@ then back on from 15 to 19 included etc...
 
 
 ## Rules and Notes
-There are certain rules to follow when configuring and arena as well as some designs you should be aware of. If a 
+There are certain rules to follow when configuring an arena as well as some designs you should be aware of. If a 
 configuration file does not behave as you expect make sure you're not breaking one of the following:
 
 - Spawning objects:
@@ -77,7 +77,7 @@ configuration file does not behave as you expect make sure you're not breaking o
     - The `Agent` does not have to be provided in the configuration file, in which case it will spawn randomly.
     - If an `Agent` position is provided, be aware that the **agent spawns last** therefore it might cause problems if other objects randomly spawn where the agent should be.
     - In case an object is present where the `Agent` should spawn the arena resets and the process starts all over.
-    - You can **spawn some objects on top of each others**, however be aware there is a `0.1` buffer automatically added to any height you provide (to make sure things fall on each others nicely). 
+    - You can **spawn some objects on top of each others**, however be aware there is a `0.1` buffer automatically added to any height you provide (to make sure things fall on each other nicely). 
 
 - Configuration file values:
     - Objects' `name` have to match one of the names provided in [the definitions](definitionsOfObjects.md), if the name provided is not found in this list, the object is ignored.
