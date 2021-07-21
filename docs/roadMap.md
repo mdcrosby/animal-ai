@@ -1,4 +1,4 @@
-# AnimalAI RoadMap to 3.0 (last updated 03/07/2021)
+# AnimalAI RoadMap to 3.0 (last updated 21/07/2021)
 
 A (tentative) roadmap for AnimalAI (AAI) to get from where it is now to a tool for supporting and tracking AI progress towards currently unsolved cognitive capabilities. We want AAI to support interdisciplinary research to help better understand human, animal, and artificial cognition. We also want it to be a useful resource for making AI progress on these unsolved problems and also act as a way of tracking such progress so that we can stay on top of any AI breakthroughs that may have important societal implications.
 
@@ -34,7 +34,19 @@ Previous setting had an abstract system where food = +ve reward and time = -ve r
 
 One of the golden rules of AAI2 was that it should never be possible to break physics just for the sake of setting up an experiment. This was quite limiting for setting up psychology experiments that test for violation of expectations. We will add an extra flag for test environments to mark them as 'test-only' and support some methods for setting up these experiments. We will also add a number of features for improving the types of experiments that AAI can be used for.
 
-## 2.4 Behavioural Analysis
+
+## 2.4 Training, Debugging, and Testing Improvements
+
+- [ ] Proper FPS testing - for analysis of the impact of new features and running multiple agents at once.
+- [ ] Improved support for running multiple agents in the same environment (or in multiple envs if better).
+- [ ] Implementations and documentation for running a number of different baselines.
+- [ ] Automatic testing scripts for running a series of baseline agents on the existing (public & private) configs.
+- [ ] Incorporation of testing and debugging inside the Unity Environment editory for easier further development. 
+- [ ] Dockers to make the environment easier to use (if useful). 
+
+Most of the methods for training agents are directly using ml-agents implementations (for algorithms or wrappers). Yet, this may not be the most useful for many use-cases given the number of different ways it is possible to use the environment. This update will improve on the methods for analysing environment performance and also provide methods and tutorials for getting the most out of the environment. It will also include many internal changes that will improve future development and maintenence.
+
+## 2.5 Behavioural Analysis
 
 - [ ] Better format for storing experiment data for analysis.
 - [ ] Automatic annotated task screenshots with agent trajectories.
@@ -42,13 +54,13 @@ One of the golden rules of AAI2 was that it should never be possible to break ph
 
 For use as a proper comparison with Comparative Cognition and other animal cognition work, it is important to analyse agent (and human behaviour). We could do this with 2.0 to some extent, as [this paper](https://psyarxiv.com/me3xy) shows. The [web version](http://animalaiolympics.com/AAI/) allows for testing and playing back and directly comparing human and AI solutions. However, we currently do not utilise the wealth of extra analysis possibilities that working in a simulated environment allows for. This release plans to add some functionality in this direction.
 
-## 2.5 Object Interactions
+## 2.6 Object Interactions
 
 - [ ] Add the ability to pickup objects and interact with them in more ways than just bumping into them.
 
 Not having any ways to interact with objects was a design choice to keep the environment as simple as possible whilst still allowing for a lot of tasks. However, a simple interaction mechanism would unlock a lot of currently impossible tasks without increasing the environment complexity too much.
 
-## 2.6 WebGL Version
+## 2.7 WebGL Version
 
 - [ ] Release updated version on [animalaiolympics.com](http://animalaiolympics.com/AAI/)
 - [ ] Improve look and feel of AAI-as-game for human players.
@@ -56,7 +68,7 @@ Not having any ways to interact with objects was a design choice to keep the env
 
 A key part of AAI is the ability to compare humans, animals, and AI. The previous web-based setup was very useful for running human experiments. We plan to improve it for the new version.
 
-## 2.7 Multiagent
+## 2.8 Multiagent
 
 - [ ] Add other agents to the environment that act independently.
 - [ ] Support training multiple agents in same environment. 
