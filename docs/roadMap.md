@@ -1,4 +1,4 @@
-# AnimalAI RoadMap to 3.0 (last updated 21/07/2021)
+# AnimalAI RoadMap to 3.0 (last updated 23/07/2021)
 
 A (tentative) roadmap for AnimalAI (AAI) to get from where it is now to a tool for supporting and tracking AI progress towards currently unsolved cognitive capabilities. We want AAI to support interdisciplinary research to help better understand human, animal, and artificial cognition. We also want it to be a useful resource for making AI progress on these unsolved problems and also act as a way of tracking such progress so that we can stay on top of any AI breakthroughs that may have important societal implications.
 
@@ -43,6 +43,7 @@ One of the golden rules of AAI2 was that it should never be possible to break ph
 - [ ] Automatic testing scripts for running a series of baseline agents on the existing (public & private) configs.
 - [ ] Incorporation of testing and debugging inside the Unity Environment editory for easier further development. 
 - [ ] Dockers to make the environment easier to use (if useful). 
+- [ ] More options for the Gym Wrapper to use different types of observations (and multi-obs for SB3)
 
 Most of the methods for training agents are directly using ml-agents implementations (for algorithms or wrappers). Yet, this may not be the most useful for many use-cases given the number of different ways it is possible to use the environment. This update will improve on the methods for analysing environment performance and also provide methods and tutorials for getting the most out of the environment. It will also include many internal changes that will improve future development and maintenence.
 
