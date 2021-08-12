@@ -156,7 +156,7 @@ Moving food with positive reward (non-terminating). Starts by moving in the dire
 * size range `0.5-5`
 * cannot change color
 
-#### Deathzone: 
+#### DeathZone: 
 <img align="right" height="100" src="PrefabsPictures/Rewards/DeathZone.png">
 A red zone with reward -1 that terminates the episode on contact.
 
@@ -167,10 +167,47 @@ A red zone with reward -1 that terminates the episode on contact.
 
 #### HotZone: 
 <img align="right" height="100" src="PrefabsPictures/Rewards/HotZone.png">
-An orange zone with reward `min(-10/T,-1e-5)` (or `-1e-5` if `T=0`) that **does not** end an episode
+An orange zone with reward `min(-10/T,-1e-5)` (or `-1e-5` if `T=0`) that **does not** end an episode.
         
 * name: `HotZone`
 * size range `(1,0.5,1)-(40,10,40)`
 * does not terminate an episode
 * cannot change color
 * if a `DeathZone` and a `HotZone` overlap the `DeathZone` prevails
+
+#### Decay Goal: 
+<img align="right" height="100" src="PrefabsPictures/Rewards/DecayGoal.png">
+Variable-reward spheres whose reward 'decays' over time, following a (configurable) delay time. Colour changes (from purple to grey) and a radial-timer depletes over time during decay process. **Does not** end an episode.
+
+* name: `DecayGoal`
+* initial/final reward value range `0-5`
+* size automatically sets to `initial reward` value
+* fixed frame delay value range `0-inf` (default is `150` frames)
+
+#### Anti-Decay Goal: 
+<img align="right" height="100" src="PrefabsPictures/Rewards/AntiDecayGoal.png">
+Variable-reward spheres whose reward 'ripens' over time, following a (configurable) delay time. Colour changes (from grey to purple) and a radial-timer fills up over time during anti-decay process. **Does not** end an episode.
+
+* name: `AntiDecayGoal`
+* initial/final reward value range `0-5`
+* size automatically sets to `final reward` value
+* fixed frame delay value range `0-inf` (default is `150` frames)
+
+#### Grow Goal: 
+<img align="right" height="100" src="PrefabsPictures/Rewards/GrowGoal.png">
+Variable-reward spheres whose physical size grows over time, following a (configurable) delay time. Reward tracks size change. **Does not** end an episode.
+
+* name: `GrowGoal`
+* initial/final reward value range `0-8`
+* reward increases along with size value
+* fixed frame delay value range `0-inf` (default is `150` frames)
+* growth halts when `GrowGoal` is trapped between/underneath other objects
+
+#### Shrink Goal: 
+<img align="right" height="100" src="PrefabsPictures/Rewards/ShrinkGoal.png">
+Variable-reward spheres whose physical size shrinks over time, following a (configurable) delay time. Reward tracks size change. **Does not** end an episode.
+
+* name: `ShrinkGoal`
+* initial/final reward value range `0-8`
+* reward decreases along with size value
+* fixed frame delay value range `0-inf` (default is `150` frames)
