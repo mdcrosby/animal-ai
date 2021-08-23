@@ -21,8 +21,11 @@ The environment was ported to ml-agents 2.0. Raycast observations added and ensu
 
 Previous setting had an abstract system where food = +ve reward and time = -ve reward. This will be converted to decaying health that must be maintained by seeking our reward. Many tasks are functionally identical, but this setup is better for future tasks and also persistent survival. Other additions are improvements to the environment that go with this change and the initial setup of scripts as tutorials for using different training settings.
 
-## 2.3 Experiment and Object Improvements (In Progress)
+## 2.3 Experiment, Object, and Graphical Improvements (In Progress)
 
+- [x] Major graphics update to all items
+- [x] Goals that decay/ripen/change size.
+- [x] More items for setting up experiments
 - [ ] Can set number of observation frames before agent can move
 - [ ] Can change starting velocities of objects
 - [ ] Better support for randomisation of starting values in config files
