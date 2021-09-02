@@ -22,13 +22,13 @@ First **download the environment** for your system:
 
 | OS | Environment link | Old Versions |
 | --- | --- | --- |
-| Linux |  [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.2.zip) | [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.1.zip), [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.zip) |
-| Mac | [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.2.zip) | [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.1.zip) [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.zip) |
-| Windows | [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.2.zip) | [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.1.zip) [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.zip) |
+| Linux |  [v2.2.3](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.3.zip) | [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.2.zip), [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.1.zip), [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.zip) |
+| Mac | [v2.2.3](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.3.zip) | [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.2.zip), [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.1.zip) [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.zip) |
+| Windows | [v2.2.3](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.3.zip) | [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.2.zip), [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.1.zip) [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.zip) |
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and *any other folders* in the same directory in the zip file.
 
-The Animal-AI environment and packages are currently only tested on linux with python 3.8 but should also work on Windows and Mac.
+The Animal-AI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but should also work on python 3.6+, other linux distros and Windows and Mac.
 
 **The Unity Project** for the environment will be made available later. If you would like access for your research please get in contact. 
 
@@ -78,6 +78,8 @@ Intelligent Agents.](https://arxiv.org/abs/1809.02627) *arXiv preprint arXiv:180
 
 ## Version History
 
+- v2.2.3
+  - Now you can specify multiple different arenas in a single yml config file ant the environment will cycle through them each time it resets
 - v2.2.2 
   - Low quality version with improved fps. (will work on further improvments to graphics & fps later)
 - v2.2.1

@@ -1,4 +1,4 @@
-# AnimalAI RoadMap to 3.0 (last updated 23/07/2021)
+# AnimalAI RoadMap to 3.0 (last updated 23/08/2021)
 
 A (tentative) roadmap for AnimalAI (AAI) to get from where it is now to a tool for supporting and tracking AI progress towards currently unsolved cognitive capabilities. We want AAI to support interdisciplinary research to help better understand human, animal, and artificial cognition. We also want it to be a useful resource for making AI progress on these unsolved problems and also act as a way of tracking such progress so that we can stay on top of any AI breakthroughs that may have important societal implications.
 
@@ -21,8 +21,11 @@ The environment was ported to ml-agents 2.0. Raycast observations added and ensu
 
 Previous setting had an abstract system where food = +ve reward and time = -ve reward. This will be converted to decaying health that must be maintained by seeking our reward. Many tasks are functionally identical, but this setup is better for future tasks and also persistent survival. Other additions are improvements to the environment that go with this change and the initial setup of scripts as tutorials for using different training settings.
 
-## 2.3 Experiment and Object Improvements (In Progress)
+## 2.3 Experiment, Object, and Graphical Improvements (In Progress)
 
+- [x] Major graphics update to all items
+- [x] Goals that decay/ripen/change size.
+- [x] More items for setting up experiments
 - [ ] Can set number of observation frames before agent can move
 - [ ] Can change starting velocities of objects
 - [ ] Better support for randomisation of starting values in config files
