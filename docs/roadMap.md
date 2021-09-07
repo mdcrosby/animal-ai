@@ -34,6 +34,7 @@ Previous setting had an abstract system where food = +ve reward and time = -ve r
 - [ ] Textures on objects
 - [ ] Containers (with/without wheels)
 - [ ] Adjustable arena size
+- [ ] This release may also incorporate some of the changes originally scheduled for 2.5.
 
 One of the golden rules of AAI2 was that it should never be possible to break physics just for the sake of setting up an experiment. This was quite limiting for setting up psychology experiments that test for violation of expectations. We will add an extra flag for test environments to mark them as 'test-only' and support some methods for setting up these experiments. We will also add a number of features for improving the types of experiments that AAI can be used for.
 
@@ -55,6 +56,7 @@ Most of the methods for training agents are directly using ml-agents implementat
 - [ ] Better format for storing experiment data for analysis.
 - [ ] Automatic annotated task screenshots with agent trajectories.
 - [ ] Ability to watch back agents easily regardless of interaction method.
+- [ ] Automatically output an events log that details certain interactions that happened within a run.
 
 For use as a proper comparison with Comparative Cognition and other animal cognition work, it is important to analyse agent (and human behaviour). We could do this with 2.0 to some extent, as [this paper](https://psyarxiv.com/me3xy) shows. The [web version](http://animalaiolympics.com/AAI/) allows for testing and playing back and directly comparing human and AI solutions. However, we currently do not utilise the wealth of extra analysis possibilities that working in a simulated environment allows for. This release plans to add some functionality in this direction.
 
