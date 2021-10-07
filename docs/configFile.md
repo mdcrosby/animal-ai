@@ -157,3 +157,93 @@ In this case this will lead to (in order that they will spawn):
 - the agent with position and rotation randomized.
 
 &nbsp;
+
+##### EXAMPLE 2 - SignPosterboard (Preset Symbols)
+```
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 0
+    t: 250
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !Vector3 {x: 10, y: 0, z: 20}
+      rotations: [90]
+    - !Item
+      name: SignPosterboard
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 8}
+      - !Vector3 {x: 20, y: 0, z: 14}
+      - !Vector3 {x: 20, y: 0, z: 20}
+      - !Vector3 {x: 20, y: 0, z: 26}
+      - !Vector3 {x: 20, y: 0, z: 32}
+      rotations: [0, 0, 0, 0, 0]
+      sizes:
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      symbolNames:
+      - "left-arrow"    
+      - "letter-a"    
+      - "circle"    
+      - "u-turn-arrow"    
+      - "tick"
+```
+
+This example demonstrates the use of preset symbols declared as the list `symbolNames`, a unique parameter for SignPosterboard objects. Each symbol has a default colour that can be overridden using the `colors` list (but in this example, default colours are used).
+
+<p align="center">
+  <img height="300" src="PrefabsPictures/Other-Unique/SignPosterboard-preset-symbols.PNG">
+</p>
+
+&nbsp;
+
+##### EXAMPLE 3 - SignPosterboard (Special Symbols)
+```
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 0
+    t: 250
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !Vector3 {x: 10, y: 0, z: 20}
+      rotations: [90]
+    - !Item
+      name: SignPosterboard
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 8}
+      - !Vector3 {x: 20, y: 0, z: 14}
+      - !Vector3 {x: 20, y: 0, z: 20}
+      - !Vector3 {x: 20, y: 0, z: 26}
+      - !Vector3 {x: 20, y: 0, z: 32}
+      rotations: [0, 0, 0, 0, 0]
+      sizes:
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      symbolNames:
+      - "01/10"    
+      - "111/110/001"    
+      - "001010/011000/100001/101010/111001"    
+      - "0101/**10/0010/0***"
+      - "13x11"
+```
+
+This example demonstrates the use of *special codes* to generate black-and-white pixel grids to use as symbols. `0` -> black, `1` -> white, and `*` is a 'joker' character that chooses to output black or white at random. The dimensions of the grid are given by the `/` character - each row between `/`s must be of the same size for the code to be valid.
+
+Fully-random grids can be generated using the code `"MxN"`, where `M` and `N` are the grid width and height dimensions respectively.
+
+<p align="center">
+  <img height="300" src="PrefabsPictures/Other-Unique/SignPosterboard-special-symbols-annotated.png">
+</p>
+
+&nbsp;

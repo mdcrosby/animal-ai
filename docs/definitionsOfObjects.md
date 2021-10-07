@@ -223,7 +223,7 @@ Variable-reward spheres whose physical size shrinks over time, following a (conf
 Special objects with unique functionality. *Spawners* create and deposit new food into the arena, whilst *Signs* communicate visual information to the agent. These objects tend to have fixed dimensions (that may still be *scaled* by the `size` parameter).
 
 #### Tree Spawner *(WIP)\**
-<img align="right" height="100" src="PrefabsPictures/Other-Unique/SpawnerTree.PNG">
+<img align="right" height="110" src="PrefabsPictures/Other-Unique/SpawnerTree.PNG">
 Tree that grows new food over time. Food objects spawn and grow in the tree branches, then fall to the ground after a configurable 'ripening' time.
 
 * name: `SpawnerTree`
@@ -232,7 +232,7 @@ Tree that grows new food over time. Food objects spawn and grow in the tree bran
 * cannot change color
 
 #### Food Dispenser *(WIP)\**
-<img align="right" height="100" src="PrefabsPictures/Other-Unique/SpawnerDispenser.PNG">
+<img align="right" height="110" src="PrefabsPictures/Other-Unique/SpawnerDispenser.PNG">
 Spawns new food objects (finitely or otherwise) like a vending machine. After an initial (configurable) time delay, the dispenser door can be set to open and close at a regular specified interval. Food rolls out of the machine whenever the door is open.
 
 * name: `SpawnerDispenser`
@@ -240,7 +240,7 @@ Spawns new food objects (finitely or otherwise) like a vending machine. After an
 * spawn range `0-inf` (`-1` spawns random amount; leave blank to spawn infinitely)
 
 #### Sign Posterboard
-<img align="right" height="100" src="PrefabsPictures/Other-Unique/SignPosterboard.PNG">
+<img align="right" height="90" src="PrefabsPictures/Other-Unique/SignPosterboard.PNG">
 Posterboard communicating visual information to the agent. Features a 'symbol' that can be chosen from a list of presets, or generated as a matrix of pixels from a special code (see [configFile.md](configFile.md)).
 
 * name: `SignPosterboard`
