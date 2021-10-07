@@ -59,7 +59,7 @@ Some objects have unique/special parameters that only apply to them or a select 
 
 - `delays`:
 	- a list of `float` fixed-frame time delays before each object's special behaviour is initiated.
-	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree` *(WIP)*, `SpawnerDispenser` *(WIP)*
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree` *(WIP)\**, `SpawnerDispenser` *(WIP)\**
 	- **defaults to:** `0`
 - `initialValues`:
 	- a list of `float` reward/size values used as a starting point where the reward/size changes over time.
@@ -74,10 +74,13 @@ Some objects have unique/special parameters that only apply to them or a select 
 	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`
 	- **defaults to:** `0.005` (automatically adjusted to `-0.005` if decaying/shrinking)
 - `symbolNames`:
-	- a list of symbol names to be drawn on SignPosterboard objects. Can choose from a preset list, or specify a custom 'QR code'-style symbol (see examples @TO-DO)
+	- a list of symbol names to be drawn on SignPosterboard objects. Can choose from a preset list, or specify a custom 'QR code'-style symbol (see [examples](#detailed-examples))
 	- **applies to:** `SignPosterboard`
 	- **defaults to:** `"default"` (if no name or invalid name given)
 	- **preset list:** `"left-arrow"`, `"right-arrow"`, `"up-arrow"`, `"down-arrow"`, `"u-turn-arrow"`, `"letter-a"`, `"letter-b"`, `"letter-c"`, `"square"`, `"triangle"`, `"circle"`, `"star"`, `"tick"`, `"cross"`
+
+&nbsp;
+###### *\* (WIP) denotes 'work-in-progress' features that will be made available soon*
 
 ## Blackouts
 
@@ -111,10 +114,13 @@ configuration file does not behave as you expect make sure you're not breaking o
     - Note that setting `positions.y = -1` will spawn the object at ground level.
     - Goals (except for the red zone) can only be scaled equally on all axes, therefore they will always remain spheres. If a `Vector3` is provided for the scale of a sphere goal only the `x` component is used to scale all axes equally.
     
-## Detailed example
+## Detailed examples
 
-Let's take a look at an example:
+Let's take a look at some examples:
 
+&nbsp;
+
+##### EXAMPLE 1 - Standard Parameters & Randomisation
 ```
 !ArenaConfig
 arenas:
@@ -141,11 +147,13 @@ arenas:
       name: GoodGoal
 ```
 
-First of all, we can see that the number of parameters for `positions`, `rotations` and `sizes` do not need to match. The environment will spawn `max( len(positions), len(rotations), len(sizes) )` objects, where `len()` is the length of the list. Any mising parameter will correspond to a randomly generated value.
+First of all, we can see that the number of parameters for `positions`, `rotations` and `sizes` do not need to match. The environment will spawn `max( len(positions), len(rotations), len(sizes) )` objects, where `len()` is the length of the list. Except in special-parameter cases, any missing parameter will be assigned a randomly generated value.
 
 In this case this will lead to (in order that they will spawn):
 - a pink `Cube` spawned at `[10,10]` on the ground with rotation `45` and a size randomized on both `x` and `z` and of `y=5`.
 - a `Cube` spawned on the ground, with a random `x` and `z=30`. Its rotation, size  and color will be random.
-- three pink `CylinderTunnel` completely randomized.
+- three pink `CylinderTunnel` objects, completely randomized.
 - a `GoodGoal` randomized.
 - the agent with position and rotation randomized.
+
+&nbsp;

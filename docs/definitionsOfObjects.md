@@ -1,7 +1,8 @@
 
+
 ## The Objects
 
-There are 7 types of object split amongst three categories:
+There are 9 types of object split amongst four categories:
 * Immovable
     * Walls
     * Ramps
@@ -12,6 +13,9 @@ There are 7 types of object split amongst three categories:
 * Rewards
     * Food
     * Zones
+* Other/Unique
+    * Spawners
+    * Signs
 
 For each object we describe the object name to be used in a configuration file or in Python directly, as well as their default characteristics and the range of values you can assign to them. **All objects can be rotated `360` degrees.**
 
@@ -212,3 +216,36 @@ Variable-reward spheres whose physical size shrinks over time, following a (conf
 * initial/final reward value range `0-5`
 * reward decreases along with size value
 * fixed frame delay value range `0-inf` (default is `0` frames)
+
+
+## Other/Unique
+
+Special objects with unique functionality. *Spawners* create and deposit new food into the arena, whilst *Signs* communicate visual information to the agent. These objects tend to have fixed dimensions (that may still be *scaled* by the `size` parameter).
+
+#### Tree Spawner *(WIP)\**
+<img align="right" height="100" src="PrefabsPictures/Other-Unique/SpawnerTree.PNG">
+Tree that grows new food over time. Food objects spawn and grow in the tree branches, then fall to the ground after a configurable 'ripening' time.
+
+* name: `SpawnerTree`
+* size range `0.5-5`
+* spawn range `0-inf` (`-1` spawns random amount; leave blank to spawn infinitely)
+* cannot change color
+
+#### Food Dispenser *(WIP)\**
+<img align="right" height="100" src="PrefabsPictures/Other-Unique/SpawnerDispenser.PNG">
+Spawns new food objects (finitely or otherwise) like a vending machine. After an initial (configurable) time delay, the dispenser door can be set to open and close at a regular specified interval. Food rolls out of the machine whenever the door is open.
+
+* name: `SpawnerDispenser`
+* size range `0.5-5`
+* spawn range `0-inf` (`-1` spawns random amount; leave blank to spawn infinitely)
+
+#### Sign Posterboard
+<img align="right" height="100" src="PrefabsPictures/Other-Unique/SignPosterboard.PNG">
+Posterboard communicating visual information to the agent. Features a 'symbol' that can be chosen from a list of presets, or generated as a matrix of pixels from a special code (see [configFile.md](configFile.md)).
+
+* name: `SignPosterboard`
+* size range `0.5-2.5` (**note:** `x` is posterboard thickness, `y` is height and `z` is width)
+* color change overrides the color of the *symbol*, not the posterboard itself - leave empty for the symbol's default color to be used
+* symbol is specified using the `symbolNames` parameter
+&nbsp;
+###### *\* (WIP) denotes 'work-in-progress' features that will be made available soon*
