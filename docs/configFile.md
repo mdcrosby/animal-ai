@@ -1,3 +1,4 @@
+
 # Arena Configuration Files
 
 ## TL;DR
@@ -52,6 +53,31 @@ is empty the position will be sampled randomly in the arena. Any position dimens
 Any of these fields can be omitted in the configuration files, in which case the omitted fields are automatically randomized. Any Vector3 that contains a -1 for any of its dimensions will spawn that dimension randomly. This can be used to spawn, for example, multiple walls of a set width and height but random lengths. 
 
 **All value ranges for the above fields can be found in [the definitions](definitionsOfObjects.md)**. If you go above or below the range for size it will automatically be set to the max or min respectively. If you try to spawn outside the arena (or overlapping with another object) then nothing will spawn.
+
+## Unique/Special Object Parameters
+Some objects have unique/special parameters that only apply to them or a select few objects - they can be written in the configuration in exactly the same way as the 'standard' parameters, but will only be applied if assigned to a valid object:
+
+- `delays`:
+	- a list of `float` fixed-frame time delays before each object's special behaviour is initiated.
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree` *(WIP)*, `SpawnerDispenser` *(WIP)*
+	- **defaults to:** `0`
+- `initialValues`:
+	- a list of `float` reward/size values used as a starting point where the reward/size changes over time.
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`
+	- **defaults to:** `2.5` if decaying/shrinking; `0.5` if ripening/growing
+- `finalValues`:
+	- a list of `float` reward/size values used as an ending point where the reward/size changes over time.
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`
+	- **defaults to:** `0.5` if decaying/shrinking; `2.5` if ripening/growing
+- `changeRates`:
+	- a list of `float` rates of change at which an object's reward/size change occurs.
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`
+	- **defaults to:** `0.005` (automatically adjusted to `-0.005` if decaying/shrinking)
+- `symbolNames`:
+	- a list of symbol names to be drawn on SignPosterboard objects. Can choose from a preset list, or specify a custom 'QR code'-style symbol (see examples @TO-DO)
+	- **applies to:** `SignPosterboard`
+	- **defaults to:** `"default"` (if no name or invalid name given)
+	- **preset list:** `"left-arrow"`, `"right-arrow"`, `"up-arrow"`, `"down-arrow"`, `"u-turn-arrow"`, `"letter-a"`, `"letter-b"`, `"letter-c"`, `"square"`, `"triangle"`, `"circle"`, `"star"`, `"tick"`, `"cross"`
 
 ## Blackouts
 
