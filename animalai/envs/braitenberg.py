@@ -8,8 +8,8 @@ class Braitenberg():
     def __init__(self, no_rays):
         self.no_rays = no_rays
         assert(self.no_rays % 2 == 1), "Only supports odd number of rays (but environment should only allow odd number"
-        self.listOfObjects = [RayCastObjects.GOODGOAL, RayCastObjects.GOODGOALMULTI, RayCastObjects.BADGOAL]
-        self.raycast_parser = RayCastParser([RayCastObjects.GOODGOAL, RayCastObjects.GOODGOALMULTI, RayCastObjects.BADGOAL], self.no_rays)
+        self.listOfObjects = [RayCastObjects.GOODGOAL, RayCastObjects.GOODGOALMULTI, RayCastObjects.BADGOAL, RayCastObjects.IMMOVABLE, RayCastObjects.MOVABLE]
+        self.raycast_parser = RayCastParser(self.listOfObjects, self.no_rays)
         self.actions = AAIActions()
         self.prev_action = self.actions.NOOP
 

@@ -17,55 +17,53 @@ def run_agent_single_config(configuration_file: str) -> None:
     
     configuration = ArenaConfig(configuration_file)
 
-    totalRays = 11
+    totalRays = 3
     # Start the environment using the custom AnimalAI scripts to pass configuration and options
     env = AnimalAIEnvironment(
         file_name=env_path,
         arenas_configurations=configuration,
         seed = 0, # random.randint(0, 1000000),
         play=False,
-        useCamera=True,
+        useCamera=False,
         resolution=32,
         useRayCasts=True,
         raysPerSide=int((totalRays-1)/2),
-        decisionPeriod=12, # The number of Academy steps before the agent is asked for a new action
+        # decisionPeriod=3, #The number of Academy steps before the agent is asked for a new action
         rayMaxDegrees = 30,
-        targetFrameRate= 60,
-        captureFrameRate = 60, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
+        # targetFrameRate= -1,
+        # captureFrameRate = 0, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
     )
+    print("Environment Loaded")
 
-    env.reset()
- 
     braitenbergAgent = Braitenberg(totalRays) #A simple BraitenBerg Agent that heads towards food items.
-
     behavior = list(env.behavior_specs.keys())[0] # by default should be AnimalAI?team=0
-
-    # # # # # # # # # #
-    # # Observation examples
-    # obs = (env.get_steps(behavior)[0].obs)
-    # print(obs)
-    # o = env.getDict(obs)
-    # print(o["camera"])
-    # print(o["rays"])
-    # print("health: " + str(o["health"]))
-    # print("velocity: " + str(o["velocity"]))
-    # print("position: " + str(o["position"]))
-    # sys.exit()
-    # # # # # # # # # #
-
-    totalreward = 0
-    while(True): #Run a single episode with the Braitenberg-style agent
+    
+    firststep = True
+    for _episode in range(8): #Run episodes with the Braitenberg-style agent
+        if firststep:
+            env.step() # Need to make a first step in order to get an observation.
+            firstep = False
         dec, term = env.get_steps(behavior)
-        if len(term) > 0: #the episode has ended
-            totalreward += term.reward
-            print("Episode reward: " + str(totalreward))
-            break
-        totalreward += dec.reward #update the reward
-        raycasts = env.getDict(dec.obs)["rays"] # Get the raycast data
-        # print(braitenbergAgent.prettyPrint(raycasts)) #print raycasts in more readable format
-        action = braitenbergAgent.get_action(raycasts)
-        env.set_actions(behavior, action.action_tuple)
-        env.step()
+        done = False
+        episodeReward = 0
+        while not done:
+            raycasts = env.get_obs_dict(dec.obs)["rays"] # Get the raycast data
+            print(braitenbergAgent.prettyPrint(raycasts)) #print raycasts in more readable format
+            action = braitenbergAgent.get_action(raycasts)
+            # print(action)
+            env.set_actions(behavior, action.action_tuple)
+            env.step()      
+            dec, term = env.get_steps(behavior)
+            if len(dec.reward) > 0:
+                episodeReward += dec.reward
+            if len(term) > 0: #Episode is over
+                episodeReward += term.reward
+                print(episodeReward)
+                done = True
+                firststep = True
+
+    env.close()
+    print("Environment Closed")
        
 # Loads a random competition configuration unless a link to a config is given as an argument.
 if __name__ == "__main__":
@@ -79,4 +77,19 @@ if __name__ == "__main__":
             competition_folder + configuration_files[configuration_random]
         )
     run_agent_single_config(configuration_file=configuration_file)
+
+
+# # # # # # # # # #
+# # Observation examples
+# obs = (env.get_steps(behavior)[0].obs)
+# print(obs)
+# o = env.getDict(obs)
+# print(o["camera"])
+# print(o["rays"])
+# print("health: " + str(o["health"]))
+# print("velocity: " + str(o["velocity"]))
+# print("position: " + str(o["position"]))
+# sys.exit()
+# # # # # # # # # #
+
     
