@@ -12,9 +12,17 @@ This repo contains some introductory python scripts for interacting with the tra
 
 The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) release 2 (python package 0.26.0).
 
-## Requirements
+## Getting Started
 
-First **download the environment** for your system:
+To get started with the environment follow the download instructions below and then one of the following tutorials.
+
+- [Designing Experiments](@TODO)
+- [Training using Stable Baselines 3](@TODO)
+- [Running psychology experiments](@TODO)
+- [Watching your agent](@TODO)
+- @TODO
+
+After cloning this repo **download the environment** for your system:
 
 | OS | Environment link |
 | --- | --- |
