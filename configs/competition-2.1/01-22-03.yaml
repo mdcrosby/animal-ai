@@ -6,7 +6,6 @@ arenas:
     items:
     - !Item
       name: GoodGoalMulti
-      positions:
       sizes:
       - !Vector3 {x: 1, y: 1, z: 1}
       - !Vector3 {x: 1, y: 1, z: 1}

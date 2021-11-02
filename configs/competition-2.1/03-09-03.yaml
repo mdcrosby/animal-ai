@@ -16,16 +16,14 @@ arenas:
     - !Item
       name: WallTransparent
       positions:
-      - !Vector3 {x: 20, y: 0.5, z: 30}
+      - !Vector3 {x: 20, y: 0.5, z: 35}
       rotations: [0]
       sizes:
-      - !Vector3 {x: 15, y: 3, z: 1}
-      colors:
-      - !Vector3 {x: 153, y: 153, z: 153}
+      - !Vector3 {x: 25, y: 3, z: 1}
     - !Item
       name: GoodGoal
       positions:
-      - !Vector3 {x: 13, y: 0, z: 34}      
+      - !Vector3 {x: 27, y: 0, z: 38}      
       sizes:
       - !Vector3 {x: 1, y: 1, z: 1}
     - !Item
