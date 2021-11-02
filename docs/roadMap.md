@@ -1,4 +1,4 @@
-# AnimalAI RoadMap to 3.0 (last updated 23/07/2021)
+# AnimalAI RoadMap to 3.0 (last updated 23/08/2021)
 
 A (tentative) roadmap for AnimalAI (AAI) to get from where it is now to a tool for supporting and tracking AI progress towards currently unsolved cognitive capabilities. We want AAI to support interdisciplinary research to help better understand human, animal, and artificial cognition. We also want it to be a useful resource for making AI progress on these unsolved problems and also act as a way of tracking such progress so that we can stay on top of any AI breakthroughs that may have important societal implications.
 
@@ -21,8 +21,11 @@ The environment was ported to ml-agents 2.0. Raycast observations added and ensu
 
 Previous setting had an abstract system where food = +ve reward and time = -ve reward. This will be converted to decaying health that must be maintained by seeking our reward. Many tasks are functionally identical, but this setup is better for future tasks and also persistent survival. Other additions are improvements to the environment that go with this change and the initial setup of scripts as tutorials for using different training settings.
 
-## 2.3 Experiment and Object Improvements (In Progress)
+## 2.3 Experiment, Object, and Graphical Improvements (In Progress)
 
+- [x] Major graphics update to all items
+- [x] Goals that decay/ripen/change size.
+- [x] More items for setting up experiments
 - [ ] Can set number of observation frames before agent can move
 - [ ] Can change starting velocities of objects
 - [ ] Better support for randomisation of starting values in config files
@@ -31,6 +34,7 @@ Previous setting had an abstract system where food = +ve reward and time = -ve r
 - [ ] Textures on objects
 - [ ] Containers (with/without wheels)
 - [ ] Adjustable arena size
+- [ ] This release may also incorporate some of the changes originally scheduled for 2.5.
 
 One of the golden rules of AAI2 was that it should never be possible to break physics just for the sake of setting up an experiment. This was quite limiting for setting up psychology experiments that test for violation of expectations. We will add an extra flag for test environments to mark them as 'test-only' and support some methods for setting up these experiments. We will also add a number of features for improving the types of experiments that AAI can be used for.
 
@@ -52,6 +56,7 @@ Most of the methods for training agents are directly using ml-agents implementat
 - [ ] Better format for storing experiment data for analysis.
 - [ ] Automatic annotated task screenshots with agent trajectories.
 - [ ] Ability to watch back agents easily regardless of interaction method.
+- [ ] Automatically output an events log that details certain interactions that happened within a run.
 
 For use as a proper comparison with Comparative Cognition and other animal cognition work, it is important to analyse agent (and human behaviour). We could do this with 2.0 to some extent, as [this paper](https://psyarxiv.com/me3xy) shows. The [web version](http://animalaiolympics.com/AAI/) allows for testing and playing back and directly comparing human and AI solutions. However, we currently do not utilise the wealth of extra analysis possibilities that working in a simulated environment allows for. This release plans to add some functionality in this direction.
 
