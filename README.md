@@ -28,7 +28,7 @@ First **download the environment** for your system:
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and *any other folders* in the same directory in the zip file.
 
-You will need the python package mlagents==0.26.0
+You will need the python package mlagents==0.26.0, protobuf==3.17.0, and, depending on usage, gym-unity==0.26.0. (Proper installation instructions will be provided for v3.0 release by Nov 12th.).0--p
 
 The Animal-AI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but should also work on python 3.6+, other linux distros and Windows and Mac.
 
