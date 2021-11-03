@@ -1,4 +1,5 @@
 
+
 # Arena Configuration Files
 
 ## TL;DR
@@ -57,30 +58,57 @@ Any of these fields can be omitted in the configuration files, in which case the
 ## Unique/Special Object Parameters
 Some objects have unique/special parameters that only apply to them or a select few objects - they can be written in the configuration in exactly the same way as the 'standard' parameters, but will only be applied if assigned to a valid object:
 
+- `skins`:
+	- a list of animal names, denoting the 'skin' that is applied to the agent model.
+	- **applies to:** `Agent` only
+	- **defaults to:** `"random"` (is assigned any animal from the list)
+	- **preset list:** `"panda"`, `"pig"`, `"hedgehog"`, `"random"` (more animals TBC)
 - `delays`:
 	- a list of `float` fixed-frame time delays before each object's special behaviour is initiated.
-	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree` *(WIP)\**, `SpawnerDispenser` *(WIP)\**
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree`, `SpawnerDispenser`, `SpawnerContainer`
 	- **defaults to:** `0`
 - `initialValues`:
 	- a list of `float` reward/size values used as a starting point where the reward/size changes over time.
-	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`
-	- **defaults to:** `2.5` if decaying/shrinking; `0.5` if ripening/growing
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree`
+	- **defaults to:** `2.5` if decaying/shrinking goal; `0.5` if ripening/growing goal; `0.2` for initial size of fruit from tree spawners
 - `finalValues`:
 	- a list of `float` reward/size values used as an ending point where the reward/size changes over time.
-	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`
-	- **defaults to:** `0.5` if decaying/shrinking; `2.5` if ripening/growing
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree`
+	- **defaults to:** `0.5` if decaying/shrinking goal; `2.5` if ripening/growing goal; `1.0` for size of ripened fruit from tree spawners
 - `changeRates`:
 	- a list of `float` rates of change at which an object's reward/size change occurs.
 	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`
 	- **defaults to:** `0.005` (automatically adjusted to `-0.005` if decaying/shrinking)
+- `spawnCounts`:
+	- a list of `int` numbers of goals that will be spawned by each spawner.
+	- **applies to:** `SpawnerTree`, `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `-1` (infinite number of goals will be spawned continuously)
+- `spawnColors`:
+	- a list of `RGB` values denoting the colour of spawned objects from each spawner.
+	- **applies to:** `SpawnerTree`, `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** *(varies according to which spawner is used)*
+- `timesBetweenSpawns`:
+	- a list of `float` time intervals (seconds) between which spawn events occur in each spawner.
+	- **applies to:** `SpawnerTree`, `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `4.0` if spawner is a tree; `1.5` otherwise
+- `ripenTimes`:
+	- a list of `float` time durations (seconds) spawned goals will take to 'ripen' (grow in size) in a tree before falling to the ground - *(set to `0` for instant spawning, and for ripening without size growth, set initial/finalValues to be equal)*.
+	- **applies to:** `SpawnerTree`
+	- **defaults to:** `6.0`
+- `doorDelays`:
+	- a list of `float` time durations (seconds) for a dispenser/container-spawner's door to open, making spawned goals accessible.
+	- **applies to:** `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `10.0`
+- `timesBetweenDoorOpens`:
+	- a list of `float` time intervals (seconds) for which a dispenser/container-spawner's door will open before closing again *(door closing after opening is calculated automatically)*.
+	- **applies to:** `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `-1` (if `< 0` then, once opened, door stays open permanently)
 - `symbolNames`:
 	- a list of symbol names to be drawn on SignPosterboard objects. Can choose from a preset list, or specify a custom 'QR code'-style symbol (see [examples](#detailed-examples))
 	- **applies to:** `SignPosterboard`
 	- **defaults to:** `"default"` (if no name or invalid name given)
 	- **preset list:** `"left-arrow"`, `"right-arrow"`, `"up-arrow"`, `"down-arrow"`, `"u-turn-arrow"`, `"letter-a"`, `"letter-b"`, `"letter-c"`, `"square"`, `"triangle"`, `"circle"`, `"star"`, `"tick"`, `"cross"`
 
-&nbsp;
-###### *\* (WIP) denotes 'work-in-progress' features that will be made available soon*
 
 ## Blackouts
 
