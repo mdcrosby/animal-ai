@@ -258,7 +258,7 @@ Spawns new goal objects (finitely or otherwise) in a small transparent container
 Posterboard communicating visual information to the agent. Features a 'symbol' that can be chosen from a list of presets, or generated as a matrix of pixels from a special code (see [configFile.md](configFile.md)).
 
 * name: `SignPosterboard`
-* size range: `0.5-2.5` (**note:** `x` is posterboard thickness, `y` is height, `z` is width - size values are for posterboards are a *scale factor*, not the actual size)
+* size range: `0.5-2.5` (**note:** `x` is posterboard thickness, `y` is height, `z` is width - size values for posterboards are a *scale factor*, not the actual size)
 * color change overrides the color of the *symbol*, not the posterboard itself - leave empty for the symbol's default color to be used
 * symbol is specified using the `symbolNames` parameter
 &nbsp;
