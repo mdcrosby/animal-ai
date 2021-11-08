@@ -1,30 +1,34 @@
-# Animal-AI 3 (BETA)
+# AnimalAI 3
 
-AAI supports interdisciplinary research to help better understand human, animal, and artificial cognition. It also supports AI research towards unlocking cognitive capabilities and will also help track progress towards those with societal implications.
+AAI supports interdisciplinary research to help better understand human, animal, and artificial cognition. It aims to support AI research towards unlocking cognitive capabilities and better understanding the space of possible minds.
 
 | ![](figs/animal-cyl-fail.gif) | ![](figs/agent-cyl-fail.gif) |
 |---|---|
 | ![](figs/animal-cyl-pass.gif) | ![](figs/agent-cyl-pass.gif) |
 
-## Version
-
-The environment will be undergoing heavy development over the next few years. Currently on version 2.2.2 you can see the roadmap towards the next major release [here](docs/roadMap.md).
-
 ## This Repo
 
-This repo contains some introductory python scripts for interacting with the training environment as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched. More tutorials and documentation (as well as environment features) will be added as we approach 3.0.
+This repo contains some introductory python scripts for interacting with the training environment as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition and some others for demonstration purposes. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
 
 The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) release 2 (python package 0.26.0).
 
-## Requirements
+## Getting Started
 
-First **download the environment** for your system:
+To get started with the environment follow the download instructions below and then one of the following tutorials.
 
-| OS | Environment link | Old Versions |
-| --- | --- | --- |
-| Linux |  [v2.2.3](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.3.zip) | [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.2.zip), [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.1.zip), [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_LINUX_2.1.zip) |
-| Mac | [v2.2.3](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.3.zip) | [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.2.zip), [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.1.zip) [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_MAC_2.1.zip) |
-| Windows | [v2.2.3](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.3.zip) | [v2.2.2](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.2.zip), [v2.2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.1.zip) [v2.2.0](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.2.0.zip), [v2.1.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.1.zip), [v2.1](https://www.doc.ic.ac.uk/~mcrosby/aai_builds/AnimalAI_WINDOWS_2.1.zip) |
+- [Designing Experiments](@TODO)
+- [Training using Stable Baselines 3](@TODO)
+- [Running psychology experiments](@TODO)
+- [Watching your agent](@TODO)
+- @TODO
+
+After cloning this repo **download the environment** for your system:
+
+| OS | Environment link |
+| --- | --- |
+| Linux |  [v3.0](@TODO) |
+| Mac | [v3.0](@TODO) |
+| Windows | [v3.0](@TODO) |
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and *any other folders* in the same directory in the zip file.
 
@@ -32,7 +36,7 @@ You will need the python package mlagents==0.26.0, protobuf==3.17.0, and, depend
 
 The Animal-AI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but should also work on python 3.6+, other linux distros and Windows and Mac.
 
-**The Unity Project** for the environment will be made available later. If you would like access for your research please get in contact. 
+**The Unity Project** for the environment is available [here](@TODO), please check the github for contributions. 
 
 ## Manual Control
 
@@ -47,10 +51,6 @@ If you launch the environment directly from the executable or through the `play_
 | D   | turn agent right    |
 | C   | switch camera       |
 | R   | reset environment   |
-
-## While Still in Beta
-
-For now many of the documentation from [version 2](https://github.com/beyretb/AnimalAI-Olympics) may be a useful reference until everything is fully migrated and updated. Further the documentation for [mlagents](https://github.com/Unity-Technologies/ml-agents) is very good and includes a lot of useful examples.
 
 ## Citing
 If you use the Animal-AI environment in your work you can cite the environment paper:
@@ -77,6 +77,8 @@ The Animal-AI Olympics was built using [Unity's ML-Agents Toolkit.](https://gith
 
 Juliani, A., Berges, V., Vckay, E., Gao, Y., Henry, H., Mattar, M., Lange, D. (2018). [Unity: A General Platform for 
 Intelligent Agents.](https://arxiv.org/abs/1809.02627) *arXiv preprint arXiv:1809.02627*
+
+Further the documentation for [mlagents](https://github.com/Unity-Technologies/ml-agents) should be consulted if you want to make any changes.
 
 ## Version History
 

@@ -1,3 +1,5 @@
+
+
 # Arena Configuration Files
 
 ## TL;DR
@@ -53,6 +55,61 @@ Any of these fields can be omitted in the configuration files, in which case the
 
 **All value ranges for the above fields can be found in [the definitions](definitionsOfObjects.md)**. If you go above or below the range for size it will automatically be set to the max or min respectively. If you try to spawn outside the arena (or overlapping with another object) then nothing will spawn.
 
+## Unique/Special Object Parameters
+Some objects have unique/special parameters that only apply to them or a select few objects - they can be written in the configuration in exactly the same way as the 'standard' parameters, but will only be applied if assigned to a valid object:
+
+- `skins`:
+	- a list of animal names, denoting the 'skin' that is applied to the agent model.
+	- **applies to:** `Agent` only
+	- **defaults to:** `"random"` (is assigned any animal from the list)
+	- **preset list:** `"panda"`, `"pig"`, `"hedgehog"`, `"random"` (more animals TBC)
+- `delays`:
+	- a list of `float` fixed-frame time delays before each object's special behaviour is initiated.
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree`, `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `0`
+- `initialValues`:
+	- a list of `float` reward/size values used as a starting point where the reward/size changes over time.
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree`
+	- **defaults to:** `2.5` if decaying/shrinking goal; `0.5` if ripening/growing goal; `0.2` for initial size of fruit from tree spawners
+- `finalValues`:
+	- a list of `float` reward/size values used as an ending point where the reward/size changes over time.
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`, `SpawnerTree`
+	- **defaults to:** `0.5` if decaying/shrinking goal; `2.5` if ripening/growing goal; `1.0` for size of ripened fruit from tree spawners
+- `changeRates`:
+	- a list of `float` rates of change at which an object's reward/size change occurs.
+	- **applies to:** `DecayGoal`, `AntiDecayGoal`, `GrowGoal`, `ShrinkGoal`
+	- **defaults to:** `0.005` (automatically adjusted to `-0.005` if decaying/shrinking)
+- `spawnCounts`:
+	- a list of `int` numbers of goals that will be spawned by each spawner.
+	- **applies to:** `SpawnerTree`, `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `-1` (infinite number of goals will be spawned continuously)
+- `spawnColors`:
+	- a list of `RGB` values denoting the colour of spawned objects from each spawner.
+	- **applies to:** `SpawnerTree`, `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** *(varies according to which spawner is used)*
+- `timesBetweenSpawns`:
+	- a list of `float` time intervals (seconds) between which spawn events occur in each spawner.
+	- **applies to:** `SpawnerTree`, `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `4.0` if spawner is a tree; `1.5` otherwise
+- `ripenTimes`:
+	- a list of `float` time durations (seconds) spawned goals will take to 'ripen' (grow in size) in a tree before falling to the ground - *(set to `0` for instant spawning, and for ripening without size growth, set initial/finalValues to be equal)*.
+	- **applies to:** `SpawnerTree`
+	- **defaults to:** `6.0`
+- `doorDelays`:
+	- a list of `float` time durations (seconds) for a dispenser/container-spawner's door to open, making spawned goals accessible.
+	- **applies to:** `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `10.0`
+- `timesBetweenDoorOpens`:
+	- a list of `float` time intervals (seconds) for which a dispenser/container-spawner's door will open before closing again *(door closing after opening is calculated automatically)*.
+	- **applies to:** `SpawnerDispenser`, `SpawnerContainer`
+	- **defaults to:** `-1` (if `< 0` then, once opened, door stays open permanently)
+- `symbolNames`:
+	- a list of symbol names to be drawn on SignPosterboard objects. Can choose from a preset list, or specify a custom 'QR code'-style symbol (see [examples](#detailed-examples))
+	- **applies to:** `SignPosterboard`
+	- **defaults to:** `"default"` (if no name or invalid name given)
+	- **preset list:** `"left-arrow"`, `"right-arrow"`, `"up-arrow"`, `"down-arrow"`, `"u-turn-arrow"`, `"letter-a"`, `"letter-b"`, `"letter-c"`, `"square"`, `"triangle"`, `"circle"`, `"star"`, `"tick"`, `"cross"`
+
+
 ## Blackouts
 
 Blackouts are parameters you can pass to each arena, which define between which frames of an episode the lights are 
@@ -85,10 +142,13 @@ configuration file does not behave as you expect make sure you're not breaking o
     - Note that setting `positions.y = -1` will spawn the object at ground level.
     - Goals (except for the red zone) can only be scaled equally on all axes, therefore they will always remain spheres. If a `Vector3` is provided for the scale of a sphere goal only the `x` component is used to scale all axes equally.
     
-## Detailed example
+## Detailed examples
 
-Let's take a look at an example:
+Let's take a look at some examples:
 
+&nbsp;
+
+##### EXAMPLE 1 - Standard Parameters & Randomisation
 ```
 !ArenaConfig
 arenas:
@@ -115,11 +175,103 @@ arenas:
       name: GoodGoal
 ```
 
-First of all, we can see that the number of parameters for `positions`, `rotations` and `sizes` do not need to match. The environment will spawn `max( len(positions), len(rotations), len(sizes) )` objects, where `len()` is the length of the list. Any mising parameter will correspond to a randomly generated value.
+First of all, we can see that the number of parameters for `positions`, `rotations` and `sizes` do not need to match. The environment will spawn `max( len(positions), len(rotations), len(sizes) )` objects, where `len()` is the length of the list. Except in special-parameter cases, any missing parameter will be assigned a randomly generated value.
 
 In this case this will lead to (in order that they will spawn):
 - a pink `Cube` spawned at `[10,10]` on the ground with rotation `45` and a size randomized on both `x` and `z` and of `y=5`.
 - a `Cube` spawned on the ground, with a random `x` and `z=30`. Its rotation, size  and color will be random.
-- three pink `CylinderTunnel` completely randomized.
+- three pink `CylinderTunnel` objects, completely randomized.
 - a `GoodGoal` randomized.
 - the agent with position and rotation randomized.
+
+&nbsp;
+
+##### EXAMPLE 2 - SignPosterboard (Preset Symbols)
+```
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 0
+    t: 250
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !Vector3 {x: 10, y: 0, z: 20}
+      rotations: [90]
+    - !Item
+      name: SignPosterboard
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 8}
+      - !Vector3 {x: 20, y: 0, z: 14}
+      - !Vector3 {x: 20, y: 0, z: 20}
+      - !Vector3 {x: 20, y: 0, z: 26}
+      - !Vector3 {x: 20, y: 0, z: 32}
+      rotations: [0, 0, 0, 0, 0]
+      sizes:
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      symbolNames:
+      - "left-arrow"    
+      - "letter-a"    
+      - "circle"    
+      - "u-turn-arrow"    
+      - "tick"
+```
+
+This example demonstrates the use of preset symbols declared as the list `symbolNames`, a unique parameter for SignPosterboard objects. Each symbol has a default colour that can be overridden using the `colors` list (but in this example, default colours are used).
+
+<p align="center">
+  <img height="300" src="PrefabsPictures/Other-Unique/SignPosterboard-preset-symbols.PNG">
+</p>
+
+&nbsp;
+
+##### EXAMPLE 3 - SignPosterboard (Special Symbols)
+```
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 0
+    t: 250
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !Vector3 {x: 10, y: 0, z: 20}
+      rotations: [90]
+    - !Item
+      name: SignPosterboard
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 8}
+      - !Vector3 {x: 20, y: 0, z: 14}
+      - !Vector3 {x: 20, y: 0, z: 20}
+      - !Vector3 {x: 20, y: 0, z: 26}
+      - !Vector3 {x: 20, y: 0, z: 32}
+      rotations: [0, 0, 0, 0, 0]
+      sizes:
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      - !Vector3 {x: 1, y: 1, z: 1}
+      symbolNames:
+      - "01/10"    
+      - "111/110/001"    
+      - "001010/011000/100001/101010/111001"    
+      - "0101/**10/0010/0***"
+      - "13x11"
+```
+
+This example demonstrates the use of *special codes* to generate black-and-white pixel grids to use as symbols. `0` -> black, `1` -> white, and `*` is a 'joker' character that chooses to output black or white at random. The dimensions of the grid are given by the `/` character - each row between `/`s must be of the same size for the code to be valid.
+
+Fully-random grids can be generated using the code `"MxN"`, where `M` and `N` are the grid width and height dimensions respectively.
+
+<p align="center">
+  <img height="300" src="PrefabsPictures/Other-Unique/SignPosterboard-special-symbols-annotated.png">
+</p>
+
+&nbsp;
