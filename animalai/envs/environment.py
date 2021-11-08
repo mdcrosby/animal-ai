@@ -11,7 +11,6 @@ from mlagents_envs.side_channel.engine_configuration_channel import (
 )
 from animalai.envs.arena_config import ArenaConfig
 
-
 class PlayTrain(NamedTuple):
     play: int
     train: int
