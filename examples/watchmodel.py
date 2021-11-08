@@ -20,7 +20,7 @@ def train_agent_single_config(configuration_file):
     aai_env = AnimalAIEnvironment(
         seed = 123,
         file_name="env/AnimalAI",
-        arenas_configurations=ArenaConfig(configuration_file),
+        arenas_configurations=configuration_file,
         play=False,
         base_port=base_port,
         inference=inference, #Set true when watching the agent
