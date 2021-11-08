@@ -1,5 +1,4 @@
 from stable_baselines3 import PPO
-from stable_baselines3 import DQN
 import torch as th
 
 import sys
@@ -12,7 +11,7 @@ from animalai.envs.environment import AnimalAIEnvironment
 
 def train_agent_single_config(configuration_file):
     
-    training = True #Set to false to watch the agent. 
+    training = False #Set to false to watch the agent. 
     targetFrameRate = -1 if training else 60
     captureFrameRate = 0 if training else 60
     base_port = 5000 if training else 5001
@@ -27,7 +26,7 @@ def train_agent_single_config(configuration_file):
         inference=inference, #Set true when watching the agent
         useCamera=True,
         resolution=36,
-        useRayCasts=False,
+        useRayCasts=True,
         raysPerSide=1,
         rayMaxDegrees = 30,
     )
@@ -39,31 +38,21 @@ def train_agent_single_config(configuration_file):
     #         return env
     #     return _thunk
     # env = DummyVecEnv([make_env()])
-    env = UnityToGymWrapper(aai_env, uint8_visual=True, allow_multiple_obs=False, flatten_branched=True)
-    runname = "puretest"
+    # env = UnityToGymWrapper(aai_env, uint8_visual=False, allow_multiple_obs=True, flatten_branched=True)
+    env = UnityToGymWrapper(aai_env, uint8_visual=False, allow_multiple_obs=True, flatten_branched=True)
+    runname = "megacourse2" #megacourse2
 
-    if training:
-        policy_kwargs = dict(activation_fn=th.nn.ReLU)
-        model = DQN("CnnPolicy", env, policy_kwargs=policy_kwargs, verbose=1, tensorboard_log=("./ppo_tensorboard/" + runname))
-
-        reset_num_timesteps = True
-        for i in range(1000):
-            model.learn(100000, reset_num_timesteps=reset_num_timesteps) #100,000 * 1,000 = 100,000,000
-            model.save("results/" + runname + "/model_" + str( (i+1)*100000 ))
-            reset_num_timesteps = False
-
-    else:
-
-        model = DQN.load("results/"  + runname + "/model_1800000")
-        obs = env.reset()
-        while True:
-            action, _states = model.predict(obs, deterministic=True)
-            obs, reward, done, info = env.step(action)
-            # print(obs)
-            env.render()
-            if done:
-                obs=env.reset()
-        env.close()
+    model = PPO.load("results/"  + runname + "/model_1800000")
+    obs = env.reset()
+    while True:
+        action, _states = model.predict(obs, deterministic=True)
+        obs, reward, done, info = env.step(action)
+        # print(obs)
+        env.render()
+        if done:
+            obs=env.reset()
+    
+    env.close()
 
     
 # Loads a random competition configuration unless a link to a config is given as an argument.

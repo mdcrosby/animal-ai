@@ -29,7 +29,6 @@ class AnimalAIEnvironment(UnityEnvironment):
     TARGET_FRAME_RATE = PlayTrain(play=60, train=-1)
     CAPTURE_FRAME_RATE = PlayTrain(play=60, train=0)
     ARENA_CONFIG_SC_UUID = "9c36c837-cad5-498a-b675-bc19c9370072"
-    YAML_SC_UUID = "20b62eb2-cde3-4f5f-a8e5-af8d9677971d"
 
     def __init__(
         self,
@@ -39,8 +38,9 @@ class AnimalAIEnvironment(UnityEnvironment):
         worker_id: int = 0,
         base_port: int = 5005,
         seed: int = 0,
+        n_arenas: int = 1,
         play: bool = False,
-        arenas_configurations: str = "",
+        arenas_configurations: ArenaConfig = None,
         inference: bool = False,
         useCamera: bool = True,
         resolution: int = None,
@@ -51,9 +51,6 @@ class AnimalAIEnvironment(UnityEnvironment):
         decisionPeriod: int = 3, 
         side_channels: Optional[List[SideChannel]] = None,
         no_graphics: bool = False,
-        use_YAML: bool = True,
-        # captureFrameRate: int = 0,
-        # targetFrameRate: int = 60,
         ):
 
         self.obsdict = {
@@ -65,7 +62,8 @@ class AnimalAIEnvironment(UnityEnvironment):
         }
         self.useCamera = useCamera
         self.useRayCasts = useRayCasts
-        args = self.executable_args( 
+        args = self.executable_args(
+            n_arenas, 
             play,
             useCamera, 
             resolution, 
@@ -79,9 +77,6 @@ class AnimalAIEnvironment(UnityEnvironment):
         self.timeout = 10 if play else 60
         self.side_channels = side_channels if side_channels else []
         self.arenas_parameters_side_channel = None
-        self.use_YAML = use_YAML
-        # self.captureFrameRate = captureFrameRate
-        # self.targetFrameRate = targetFrameRate
 
         self.configure_side_channels(self.side_channels)
 
@@ -96,7 +91,17 @@ class AnimalAIEnvironment(UnityEnvironment):
             side_channels=self.side_channels,
             log_folder=log_folder,
         )
-        self.reset(arenas_configurations)
+        
+        if arenas_configurations:
+            print("Sending arena config")
+            arenas_configurations_proto = arenas_configurations.to_proto()
+            arenas_configurations_proto_string = arenas_configurations_proto.SerializeToString(
+                deterministic=True
+            )
+            self.arenas_parameters_side_channel.send_raw_data(
+                bytearray(arenas_configurations_proto_string)
+            )
+        print("Initialised AnimalAI Python Class")
 
     def configure_side_channels(self, side_channels: List[SideChannel]) -> None:
 
@@ -157,23 +162,9 @@ class AnimalAIEnvironment(UnityEnvironment):
         self.obsdict["position"] = obs[intrinsicobs][0][4:7]
         return self.obsdict
 
-    def reset(self, arenas_configurations: ArenaConfig = None) -> None:
-        print(arenas_configurations)
-        if arenas_configurations != "":
-            f = open(arenas_configurations, "r")
-            d = f.read()
-            f.close()
-            self.arenas_parameters_side_channel.send_raw_data(bytearray(d, encoding="utf-8"))
-        try:
-            super().reset()
-        except UnityTimeOutException as timeoutException:
-            if self.play:
-                pass
-            else:
-                raise timeoutException
-
     @staticmethod
     def executable_args(
+        n_arenas: int = 1,
         play: bool = False,
         useCamera: bool = True,
         resolution: int = 150,
@@ -188,6 +179,8 @@ class AnimalAIEnvironment(UnityEnvironment):
             args.append("1")
         else:
             args.append("0")
+        args.append("--numberOfArenas")
+        args.append(str(n_arenas))  
         if useCamera:
             args.append("--useCamera")
         if resolution:
