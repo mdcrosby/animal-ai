@@ -1,8 +1,16 @@
-mlenvs/
-testing/
 results/*
 logs/
-.vscode/
-oldscripts/
-gymAAI.py
 __pycache__/
+
+# Builds
+*.apk
+*.unitypackage
+*.app
+*.exe
+*.x86_64
+*.x86
+
+__pycache__/
+*.pyc
+*.vscode
+*.pytest_cache/
