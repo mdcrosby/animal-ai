@@ -15,7 +15,7 @@ def run_agent_single_config(configuration_file: str) -> None:
     """
     env_path = "env/AnimalAI"
     
-    configuration = ArenaConfig(configuration_file)
+    configuration = configuration_file
 
     totalRays = 3
     # Start the environment using the custom AnimalAI scripts to pass configuration and options

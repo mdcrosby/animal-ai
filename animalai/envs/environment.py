@@ -39,7 +39,6 @@ class AnimalAIEnvironment(UnityEnvironment):
         worker_id: int = 0,
         base_port: int = 5005,
         seed: int = 0,
-        n_arenas: int = 1,
         play: bool = False,
         arenas_configurations: str = "",
         inference: bool = False,
@@ -66,8 +65,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         }
         self.useCamera = useCamera
         self.useRayCasts = useRayCasts
-        args = self.executable_args(
-            n_arenas, 
+        args = self.executable_args( 
             play,
             useCamera, 
             resolution, 
@@ -160,14 +158,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         return self.obsdict
 
     def reset(self, arenas_configurations: ArenaConfig = None) -> None:
-        # if arenas_configurations and not self.use_YAML:
-        #     arenas_configurations_proto = arenas_configurations.to_proto()
-        #     arenas_configurations_proto_string = arenas_configurations_proto.SerializeToString(
-        #         deterministic=True
-        #     )
-        #     self.arenas_parameters_side_channel.send_raw_data(
-        #         bytearray(arenas_configurations_proto_string)
-        #     )
+        print(arenas_configurations)
         if arenas_configurations != "":
             f = open(arenas_configurations, "r")
             d = f.read()
@@ -183,7 +174,6 @@ class AnimalAIEnvironment(UnityEnvironment):
 
     @staticmethod
     def executable_args(
-        n_arenas: int = 1,
         play: bool = False,
         useCamera: bool = True,
         resolution: int = 150,
@@ -198,8 +188,6 @@ class AnimalAIEnvironment(UnityEnvironment):
             args.append("1")
         else:
             args.append("0")
-        args.append("--numberOfArenas")
-        args.append(str(n_arenas))  
         if useCamera:
             args.append("--useCamera")
         if resolution:
