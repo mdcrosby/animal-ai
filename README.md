@@ -19,7 +19,10 @@ The AnimalAI environment and packages are currently only tested on linux (Ubuntu
 
 ## Installing
 
-1. After cloning this repo **download the environment** for your system:
+To get started you will need to:
+1. Clone this repo.
+2. **Install the animalai python package** and requirements by running `pip install -e animalai` from the root folder.
+3. **download the environment** for your system:
 
 | OS | Environment link |
 | --- | --- |
@@ -29,11 +32,9 @@ The AnimalAI environment and packages are currently only tested on linux (Ubuntu
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and *any other folders* in the same directory in the zip file.
 
-2. Install the animalai package and requirements by running `pip install -e animalai`.
-
 ## Tutorials and Examples
 
-To following tutorials/examples provide walkthroughs for some common uses for the environment.
+Some example scripts to get started can be found in the `examples` folder. The following docs provide information for some common uses of the environment.
 
 - [Getting started with the environment](docs/quickStart.md)
 - [Using the ML-Agents Low-Level API: A hand-coded Braitenberg Vehicle baseline](docs/lowLevelAPI.md)
