@@ -158,7 +158,6 @@ class AnimalAIEnvironment(UnityEnvironment):
         return self.obsdict
 
     def reset(self, arenas_configurations: ArenaConfig = None) -> None:
-        print(arenas_configurations)
         if not arenas_configurations is None:
             f = open(arenas_configurations, "r")
             d = f.read()

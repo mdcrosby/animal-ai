@@ -1,0 +1,11 @@
+# Training
+
+You can use a gym wrapper to wrap the environment for use with your favourite deep learning library. You can also use Unity ml-agents custom training scripts directly.
+
+## gymwrapper.py
+
+The example script `gymwrapper.py` shows a simple way to run an AnimalAI task using stable baselines 3. To run this you will also need to install stable-baselines3 (this version was tested with stable-baselines3==1.2.0).
+
+## trainaai.py
+
+The example script `trainaai.py` shows how to run ml-agents training. Documentation for this can be found [here](https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Training-ML-Agents.md). 
