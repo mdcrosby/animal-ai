@@ -35,13 +35,9 @@ In the `examples` folder run `pip install -r requirements.txt`
 To following tutorials/examples provide walkthroughs for some common uses for the environment.
 
 - [Getting started with the environment](docs/quickStart.md)
-- [Using the ML-Agents Low-Level API: A hand-coded Braitenberg Vehicle baseline](@TODO)
-- [Designing Experiments](@TODO)
-- [Running psychology experiments](@TODO)
+- [Using the ML-Agents Low-Level API: A hand-coded Braitenberg Vehicle baseline](@docs/lowLevelAPI.md)
+- [Designing Experiments](@docs/configFile.md)
 - [Training using Stable Baselines 3](@TODO)
-- [Watching your agent](@TODO)
-- @TODO
-
 
 ## Manual Control
 
