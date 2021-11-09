@@ -2,9 +2,9 @@
 
 AAI supports interdisciplinary research to help better understand human, animal, and artificial cognition. It aims to support AI research towards unlocking cognitive capabilities and better understanding the space of possible minds.
 
-| ![](figs/animal-cyl-fail.gif) | ![](figs/agent-cyl-fail.gif) |
+| ![](docs/figs/animal-cyl-fail.gif) | ![](docs/figs/agent-cyl-fail.gif) |
 |---|---|
-| ![](figs/animal-cyl-pass.gif) | ![](figs/agent-cyl-pass.gif) |
+| ![](docs/figs/animal-cyl-pass.gif) | ![](docs/figs/agent-cyl-pass.gif) |
 
 ## This Repo
 
