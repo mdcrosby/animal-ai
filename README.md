@@ -14,17 +14,6 @@ The environment is built using [Unity ml-agents](https://github.com/Unity-Techno
 
 The AnimalAI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but have been reported working with python 3.6+, other linux distros and Windows and Mac.
 
-## Tutorials
-
-To get started with the environment follow the tutorials below. If you want to get started straight away skil to the Download instructions.
-
-- [Getting Up And Running](@TODO)
-- [Designing Experiments](@TODO)
-- [Running psychology experiments](@TODO)
-- [Training using Stable Baselines 3](@TODO)
-- [Watching your agent](@TODO)
-- @TODO
-
 ## Installing
 
 After cloning this repo **download the environment** for your system:
@@ -39,7 +28,19 @@ Unzip the **entire content** of the archive to the `env` folder. On linux you ma
 
 You will need the python package mlagents==0.26.0, and, depending on usage, gym-unity==0.26.0. (Proper installation instructions will be provided for v3.0 release by Nov 12th.).0--p
 
-**The Unity Project** for the environment is available [here](@TODO), please check the github for contributions. 
+**The Unity Project** for the environment is available [here](@TODO).
+
+## Tutorials
+
+To following tutorials provide walkthroughs for some common uses for the environment.
+
+- [Getting used to the environment](@TODO)
+- [Designing Experiments](@TODO)
+- [Running psychology experiments](@TODO)
+- [Training using Stable Baselines 3](@TODO)
+- [Watching your agent](@TODO)
+- @TODO
+
 
 ## Manual Control
 
