@@ -12,7 +12,7 @@ You can find this script in the examples folder. If you run it, it will load a r
 
 The agent is pretty simple. It can solve quite a few tests in the competition by turning towards yellow and green objects and avoiding red ones. For example, it solves `01-05-01` (run `python lowlevelapi.py configs/competition/01-05-01.yaml`) very efficiently (Episode Reward: 0.91419995), but, of course, cannot solve any of the harder tasks in category 10 (those numbered `10-xx-0y`).
 
-By default the screen size is set very as small as possible in agent mode. It is not needed by the agent (that instead works directly on the observations sent by the environment). Unfortunately it is needed for unity to be able to render the environment so you cannot run it completely without this. 
+By default the screen size is set very small possible in agent mode. It is not needed by the agent (that instead works directly on the observations sent by the environment). Unfortunately, it is needed for unity to be able to render the environment so you cannot run it completely without this. If you really want to run headless and not use any camera observations it may be possible (see (here)[https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Learning-Environment-Executable.md]), but is not supported.
 
 The first part of the lowlevelapi script sets up the environment:
 
