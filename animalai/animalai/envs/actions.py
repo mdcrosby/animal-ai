@@ -1,5 +1,4 @@
 import numpy as np
-from enum import Enum
 from mlagents_envs.base_env import ActionTuple
 
 ##A class to help access the discrete action space of AAI environment.

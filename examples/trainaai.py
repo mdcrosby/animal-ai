@@ -1,6 +1,5 @@
 import re
 import sys
-import argparse
 
 from animalai.train.train import main as runAAILearn
 from animalai.envs.settings import AAIOptions

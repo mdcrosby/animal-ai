@@ -1,7 +1,6 @@
 import attr
 import cattr
 
-from animalai.envs.arena_config import ArenaConfig
 from typing import Optional, List, Dict, Any
 from mlagents_envs.side_channel.side_channel import SideChannel
 from mlagents.trainers.cli_utils import load_config

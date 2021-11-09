@@ -13,7 +13,7 @@ def train_agent_single_config(configuration_file):
 
     aai_env = AnimalAIEnvironment(
         seed = 123,
-        file_name="env/AnimalAI",
+        file_name="../env/AnimalAI",
         arenas_configurations=configuration_file,
         play=False,
         base_port=5000,
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         configuration_file = sys.argv[1]
     else:   
-        competition_folder = "configs/competition/"
+        competition_folder = "../configs/competition/"
         configuration_files = os.listdir(competition_folder)
         configuration_random = random.randint(0, len(configuration_files))
         configuration_file = (

@@ -1,12 +1,11 @@
-## This is a rewritten version of learn.py from the ML-Agents Toolkit
-## It is used to load the AnimalAI Environment and pass the
+## This is a slightly modified version of learn.py from the ML-Agents Toolkit
+## It is modified so that it can load the AnimalAI Environment and pass the
 ## environment-specific parameters and custom SideChannel
-## for loading config yml files. 
+## for loading config yaml files. 
 
 # # Unity ML-Agents Toolkit
 from animalai.envs.settings import AAIOptions
 from animalai.envs.environment import AnimalAIEnvironment
-from animalai.envs.arena_config import ArenaConfig
 
 from mlagents import torch_utils
 import yaml

@@ -1,5 +1,3 @@
-from animalai.envs.raycastparser import RayCastParser
-from animalai.envs.raycastparser import RayCastObjects
 import uuid
 from typing import NamedTuple, Dict, Optional, List
 from mlagents_envs.environment import UnityEnvironment
@@ -10,7 +8,6 @@ from mlagents_envs.side_channel.engine_configuration_channel import (
     EngineConfig,
     EngineConfigurationChannel,
 )
-from animalai.envs.arena_config import ArenaConfig
 
 class PlayTrain(NamedTuple):
     play: int
@@ -157,7 +154,7 @@ class AnimalAIEnvironment(UnityEnvironment):
         self.obsdict["position"] = obs[intrinsicobs][0][4:7]
         return self.obsdict
 
-    def reset(self, arenas_configurations: ArenaConfig = None) -> None:
+    def reset(self, arenas_configurations) -> None:
         if not arenas_configurations is None:
             f = open(arenas_configurations, "r")
             d = f.read()
