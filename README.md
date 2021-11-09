@@ -37,7 +37,7 @@ To following tutorials/examples provide walkthroughs for some common uses for th
 - [Getting started with the environment](docs/quickStart.md)
 - [Using the ML-Agents Low-Level API: A hand-coded Braitenberg Vehicle baseline](docs/lowLevelAPI.md)
 - [Designing Experiments](docs/configFile.md)
-- [Training using Stable Baselines 3](@TODO)
+- [Training examples](docs/training.md)
 
 ## Manual Control
 
