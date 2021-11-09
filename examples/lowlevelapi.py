@@ -1,9 +1,7 @@
-from animalai.envs.actions import AAIActions
 import sys
 import random
 import os
 
-from animalai.envs.arena_config import ArenaConfig
 from animalai.envs.environment import AnimalAIEnvironment
 from animalai.envs.braitenberg import Braitenberg
 
@@ -17,7 +15,7 @@ def run_agent_single_config(configuration_file: str) -> None:
     
     configuration = configuration_file
 
-    totalRays = 3
+    totalRays = 9
     # Start the environment using the custom AnimalAI scripts to pass configuration and options
     env = AnimalAIEnvironment(
         file_name=env_path,
@@ -25,7 +23,6 @@ def run_agent_single_config(configuration_file: str) -> None:
         seed = 0, # random.randint(0, 1000000),
         play=False,
         useCamera=False,
-        resolution=32,
         useRayCasts=True,
         raysPerSide=int((totalRays-1)/2),
         # decisionPeriod=3, #The number of Academy steps before the agent is asked for a new action
@@ -39,7 +36,7 @@ def run_agent_single_config(configuration_file: str) -> None:
     behavior = list(env.behavior_specs.keys())[0] # by default should be AnimalAI?team=0
     
     firststep = True
-    for _episode in range(8): #Run episodes with the Braitenberg-style agent
+    for _episode in range(5): #Run episodes with the Braitenberg-style agent
         if firststep:
             env.step() # Need to make a first step in order to get an observation.
             firstep = False
@@ -48,7 +45,7 @@ def run_agent_single_config(configuration_file: str) -> None:
         episodeReward = 0
         while not done:
             raycasts = env.get_obs_dict(dec.obs)["rays"] # Get the raycast data
-            print(braitenbergAgent.prettyPrint(raycasts)) #print raycasts in more readable format
+            # print(braitenbergAgent.prettyPrint(raycasts)) #print raycasts in more readable format
             action = braitenbergAgent.get_action(raycasts)
             # print(action)
             env.set_actions(behavior, action.action_tuple)
@@ -58,7 +55,7 @@ def run_agent_single_config(configuration_file: str) -> None:
                 episodeReward += dec.reward
             if len(term) > 0: #Episode is over
                 episodeReward += term.reward
-                print(episodeReward)
+                print(F"Episode Reward: {episodeReward}")
                 done = True
                 firststep = True
 
