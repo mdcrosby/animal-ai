@@ -194,7 +194,7 @@ def create_environment_factory(
             log_folder=log_folder,            
     
             play=False,
-            arenas_configurations=ArenaConfig(animalai_options.arenaConfig),
+            arenas_configurations=animalai_options.arenaConfig,
             useCamera=animalai_options.useCamera,
             resolution=animalai_options.resolution,
             useRayCasts=animalai_options.useRayCasts,
