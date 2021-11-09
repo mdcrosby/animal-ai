@@ -4,29 +4,25 @@
 
 ## TL;DR
 
-From the `examples` folder, run `python load_config_and_play.py configs/configExample.yaml` to get an understanding of how the `YAML` files configure the 
-arenas for training. You will find a list of all objects you can add to an arena as well as the values for their 
-parameters in [the definitions](definitionsOfObjects.md). You will find below all the technical details to create 
-more complex training configurations.
+From the `examples` folder, run `python play.py configs/competition/10-26-01.yaml` to get an understanding of how the `YAML` files configure the 
+arenas for training. You will find a list of all objects you can add to an arena as well as the values for their parameters in [the definitions](definitionsOfObjects.md). You will find below all the technical details to create more complex training configurations.
 
 ## Intro
-To configure training arenas you can use a simple **YAML file** and/or the **ArenaConfig structure** provided in 
-`animalai.envs.arena_config`. This makes training quite flexible and allows for the following:
+To configure training arenas you can use a simple **YAML file**. This makes training quite flexible and allows for the following:
 - load and save configurations for reusability
 - on the fly changes of configuration of one or more arenas between episodes, allowing for easy curriculum learning for example
-- share configurations between participants
+- share and update configurations easily
 
-We describe below the structure of the configuration files for an instance of the training environment, as well as all the 
-parameters and the values they can take. 
+We describe below the structure of the configuration files for an instance of the training environment, as well as all the parameters and the values they can take. 
+
 ## The Arenas
 
 <p align="center">
   <img height="400" src="PrefabsPictures/Arena.png">
 </p>
 
-A single arena is as shown above, it comes with a single agent (blue sphere, black dot showing the front), a floor and 
-four walls. It is a square of size 40x40, the origin of the arena is `(0,0)`. You can provide coordinates for 
-objects in the range `[0,40]x[0,40]` as floats.
+A single arena is as shown above, it comes with a single agent (spherical animal - currently hedgehog, pig, or panda), a floor and 
+four walls. It is a square of size 40x40, the origin of the arena is `(0,0)`. You can provide coordinates for objects in the range `[0,40]x[0,40]` as floats.
 
 Note that in Unity the **y** axis is the vertical axis. In the above picture with the agent on the ground in the center of the environment its coordinates are (20, 0, 20).
 
