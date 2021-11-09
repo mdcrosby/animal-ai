@@ -15,20 +15,16 @@ def run_agent_single_config(configuration_file: str) -> None:
     
     configuration = configuration_file
 
-    totalRays = 9
-    # Start the environment using the custom AnimalAI scripts to pass configuration and options
+    totalRays = 5
     env = AnimalAIEnvironment(
         file_name=env_path,
         arenas_configurations=configuration,
-        seed = 0, # random.randint(0, 1000000),
+        seed = 0,
         play=False,
-        useCamera=False,
+        useCamera=False, #The Braitenberg agent works with raycasts
         useRayCasts=True,
         raysPerSide=int((totalRays-1)/2),
-        # decisionPeriod=3, #The number of Academy steps before the agent is asked for a new action
         rayMaxDegrees = 30,
-        # targetFrameRate= -1,
-        # captureFrameRate = 0, #Set this so the output on screen is visible - set to 0 for faster training but no visual updates
     )
     print("Environment Loaded")
 
@@ -36,7 +32,7 @@ def run_agent_single_config(configuration_file: str) -> None:
     behavior = list(env.behavior_specs.keys())[0] # by default should be AnimalAI?team=0
     
     firststep = True
-    for _episode in range(5): #Run episodes with the Braitenberg-style agent
+    for _episode in range(3): #Run episodes with the Braitenberg-style agent
         if firststep:
             env.step() # Need to make a first step in order to get an observation.
             firstep = False
