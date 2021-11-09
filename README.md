@@ -10,7 +10,7 @@ AAI supports interdisciplinary research to help better understand human, animal,
 
 This repo contains the AnimalAI environment, some introductory python scripts for interacting with it, as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition (and some others for demonstration purposes). Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
 
-The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) release 2 (python package 0.26.0).
+The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) release 2.1.0-exp.1 (python version 0.27.0).
 
 The AnimalAI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but have been reported working with python 3.6+, other linux distros and Windows and Mac.
 
@@ -30,11 +30,12 @@ You will need the python package mlagents==0.26.0, and, depending on usage, gym-
 
 **The Unity Project** for the environment is available [here](@TODO).
 
-## Tutorials
+## Tutorials and Examples
 
-To following tutorials provide walkthroughs for some common uses for the environment.
+To following tutorials/examples provide walkthroughs for some common uses for the environment.
 
 - [Getting used to the environment](@TODO)
+- [Using the ML-Agents Low-Level API: A hand-coded Braitenberg Vehicle baseline](@TODO)
 - [Designing Experiments](@TODO)
 - [Running psychology experiments](@TODO)
 - [Training using Stable Baselines 3](@TODO)
