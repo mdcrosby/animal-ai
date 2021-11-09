@@ -15,7 +15,7 @@ def run_agent_single_config(configuration_file: str) -> None:
     
     configuration = configuration_file
 
-    totalRays = 5
+    totalRays = 9
     env = AnimalAIEnvironment(
         file_name=env_path,
         arenas_configurations=configuration,
@@ -32,7 +32,7 @@ def run_agent_single_config(configuration_file: str) -> None:
     behavior = list(env.behavior_specs.keys())[0] # by default should be AnimalAI?team=0
     
     firststep = True
-    for _episode in range(3): #Run episodes with the Braitenberg-style agent
+    for _episode in range(2): #Run episodes with the Braitenberg-style agent
         if firststep:
             env.step() # Need to make a first step in order to get an observation.
             firstep = False
