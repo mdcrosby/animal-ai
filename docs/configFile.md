@@ -26,30 +26,24 @@ four walls. It is a square of size 40x40, the origin of the arena is `(0,0)`. Yo
 
 Note that in Unity the **y** axis is the vertical axis. In the above picture with the agent on the ground in the center of the environment its coordinates are (20, 0, 20).
 
-For visualization you can only configure a single arena, however during training you can configure as many as you want, 
-each will have its local set of coordinates as described above.
-
-For a single arena you can provide the following parameters:
+For each arena you can provide the following parameters and a list of objects to spawn:
 - `t` an `int`, the length of an episode which can change from one episode to the other. A value of `0` means that the episode will 
-not terminate until a reward has been collected (setting `t=0` and having no reward will lead to an infinite episode)
+not terminate until a reward has been collected (setting `t=0` and having no reward will lead to an infinite episode). This value is converted into a decay rate for the health of the agent. A `t` of 100 means that the agent's health will decay to 0, and the episode will end, after 100 time steps.
 - `blackouts` [see below](#blackouts)
-- `pass_mark` the score the agent needs to reach to pass the level
 
 ## Objects
 
-All the objects that will be used during training are provided to you for training. All objects can be configured in the 
-same manner, using a set of parameters for each item:
+All objects can be configured in the same manner, using a set of parameters for each item:
 
 - `name`: the name of the object you want to spawn.
-- `positions`: a list of `Vector3` positions within the arena where you want to spawn items, if the list 
-is empty the position will be sampled randomly in the arena. Any position dimension set to -1 will spawn randomly.
-- `sizes`: a list of `Vector3` sizes, if the list is empty the size will be sampled randomly. You can set any size to -1 to spawn randomly along that dimension only.
+- `positions`: a list of `Vector3` positions within the arena where you want to spawn items, if the list is empty the position will be sampled randomly in the arena. Any position dimension set to -1 will spawn randomly.
+- `sizes`: a list of `Vector3` sizes, if the list is empty the size will be sampled randomly (within preset bounds for that particular object). You can set any size to -1 to spawn randomly along that dimension only.
 - `rotations`: a list of `float` in the range `[0,360]`, if the list is empty the rotation is sampled randomly.
-- `colors`: a list of `RGB` values (integers in the range `[0,255]`), if the list is empty the color is sampled randomly.
+- `colors`: a list of `RGB` values (integers in the range `[0,255]`), if the list is empty the color is sampled randomly. Note that not all objects can have their colour changed and for those (e.g. transparent objects) this value will be ignored.
 
 Any of these fields can be omitted in the configuration files, in which case the omitted fields are automatically randomized. Any Vector3 that contains a -1 for any of its dimensions will spawn that dimension randomly. This can be used to spawn, for example, multiple walls of a set width and height but random lengths. 
 
-**All value ranges for the above fields can be found in [the definitions](definitionsOfObjects.md)**. If you go above or below the range for size it will automatically be set to the max or min respectively. If you try to spawn outside the arena (or overlapping with another object) then nothing will spawn.
+**All value ranges for the above fields can be found in [the definitions](definitionsOfObjects.md)**. If you go above or below the range for size it will automatically be set to the max or min respectively. If you try to spawn outside the arena (or overlapping with another object) then that object will not be spawned. Objects are placed in the order defined such that the second overlapping object is the one that does not spawn.
 
 ## Unique/Special Object Parameters
 Some objects have unique/special parameters that only apply to them or a select few objects - they can be written in the configuration in exactly the same way as the 'standard' parameters, but will only be applied if assigned to a valid object:
