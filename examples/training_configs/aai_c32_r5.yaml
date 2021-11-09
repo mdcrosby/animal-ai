@@ -1,4 +1,4 @@
-arenaConfig: "configs/competition/1-1-1.yml"
+arenaConfig: "../configs/competition/01-01-01.yml"
 useCamera: true
 resolution: 32
 grayscale: false

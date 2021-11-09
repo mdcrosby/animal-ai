@@ -1,4 +1,4 @@
-arenaConfig: "configs/basic/synergy4.yml"
+arenaConfig: "../configs/basic/synergy4.yml"
 useCamera: false
 resolution: 32
 grayscale: false

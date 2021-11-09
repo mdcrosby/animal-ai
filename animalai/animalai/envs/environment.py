@@ -154,8 +154,8 @@ class AnimalAIEnvironment(UnityEnvironment):
         self.obsdict["position"] = obs[intrinsicobs][0][4:7]
         return self.obsdict
 
-    def reset(self, arenas_configurations) -> None:
-        if not arenas_configurations is None:
+    def reset(self, arenas_configurations="") -> None:
+        if arenas_configurations != "":
             f = open(arenas_configurations, "r")
             d = f.read()
             f.close()
