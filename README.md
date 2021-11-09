@@ -34,7 +34,7 @@ In the `examples` folder run `pip install -r requirements.txt`
 
 To following tutorials/examples provide walkthroughs for some common uses for the environment.
 
-- [Getting used to the environment](@TODO)
+- [Getting started with the environment](docs/quickStart.md)
 - [Using the ML-Agents Low-Level API: A hand-coded Braitenberg Vehicle baseline](@TODO)
 - [Designing Experiments](@TODO)
 - [Running psychology experiments](@TODO)
