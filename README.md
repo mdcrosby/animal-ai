@@ -8,19 +8,24 @@ AAI supports interdisciplinary research to help better understand human, animal,
 
 ## This Repo
 
-This repo contains some introductory python scripts for interacting with the training environment as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition and some others for demonstration purposes. Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
+This repo contains the AnimalAI environment, some introductory python scripts for interacting with it, as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition (and some others for demonstration purposes). Details of the tasks can be found on the [AAI website](http://animalaiolympics.com/AAI/testbed) where they can also be played and competition entries watched.
 
 The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) release 2 (python package 0.26.0).
 
-## Getting Started
+The AnimalAI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but have been reported working with python 3.6+, other linux distros and Windows and Mac.
 
-To get started with the environment follow the download instructions below and then one of the following tutorials.
+## Tutorials
 
+To get started with the environment follow the tutorials below. If you want to get started straight away skil to the Download instructions.
+
+- [Getting Up And Running](@TODO)
 - [Designing Experiments](@TODO)
-- [Training using Stable Baselines 3](@TODO)
 - [Running psychology experiments](@TODO)
+- [Training using Stable Baselines 3](@TODO)
 - [Watching your agent](@TODO)
 - @TODO
+
+## Installing
 
 After cloning this repo **download the environment** for your system:
 
@@ -32,16 +37,13 @@ After cloning this repo **download the environment** for your system:
 
 Unzip the **entire content** of the archive to the `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and *any other folders* in the same directory in the zip file.
 
-You will need the python package mlagents==0.26.0, protobuf==3.17.0, and, depending on usage, gym-unity==0.26.0. (Proper installation instructions will be provided for v3.0 release by Nov 12th.).0--p
-
-The Animal-AI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but should also work on python 3.6+, other linux distros and Windows and Mac.
+You will need the python package mlagents==0.26.0, and, depending on usage, gym-unity==0.26.0. (Proper installation instructions will be provided for v3.0 release by Nov 12th.).0--p
 
 **The Unity Project** for the environment is available [here](@TODO), please check the github for contributions. 
 
 ## Manual Control
 
-If you launch the environment directly from the executable or through the `play_config.py` script it will launch
- in player mode. Here you can control the agent with the following:
+If you launch the environment directly from the executable or through the `play.py` script it will launch in player mode. Here you can control the agent with the following:
 
 | Keyboard Key  | Action    |
 | --- | --- |
