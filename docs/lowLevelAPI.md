@@ -1,4 +1,4 @@
-# Python Low Level API
+# Python Low Level API: Braitenberg Agent Example
 
 AnimalAI is built with mlagents which provides a low level python API for interacting with agents. This tutorial shows how to run a hand-coded Braitenberg-style agent in AnimalAI using the low level API. This is intended mainly to show how the low level api works.
 
