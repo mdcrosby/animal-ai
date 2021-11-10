@@ -1,4 +1,4 @@
-# Some Example Scripts
+# Example Scripts
 
 This directory contains a few scripts that can be used as starting points for interacting with animalai. Note that some of the training scripts require additional packages to be installed to use - this should be obvious from the scripts.
 
