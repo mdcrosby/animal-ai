@@ -1,6 +1,6 @@
 # Training
 
-You can use a gym wrapper to wrap the environment for use with your favourite deep learning library. You can also use Unity ml-agents custom training scripts directly.
+We expect everyone will have a different setup for training agents. Here you can find two ways to wrap or use the environment as a standard reinforcement learning task. You can use a gym wrapper to wrap the environment for use with your favourite deep learning library. You can also use Unity ml-agents custom training scripts directly.
 
 ## gymwrapper.py
 
