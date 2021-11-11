@@ -14,7 +14,7 @@ The environment is built using [Unity ml-agents](https://github.com/Unity-Techno
 
 The AnimalAI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but have been reported working with python 3.6+, other linux distros and Windows and Mac.
 
-**The Unity Project** for the environment is available [here @TODO](@TODO).
+**The Unity Project** for the environment is available [here](https://github.com/mdcrosby/animal-ai-unity-project).
 
 
 ## Installing
@@ -26,9 +26,9 @@ To get started you will need to:
 
 | OS | Environment link |
 | --- | --- |
-| Linux |  [v3.0](@TODO) |
-| Mac | [v3.0](@TODO) |
-| Windows | [v3.0](@TODO) |
+| Linux |  [v3.0](http://mdcrosby.com/builds/AnimalAI_LINUX_3.0.zip) |
+| Mac | [v3.0](http://mdcrosby.com/builds/AnimalAI_MAC_3.0.zip) |
+| Windows | [v3.0](http://mdcrosby.com/builds/AnimalAI_WINDOWS_3.0.zip) |
 
 Unzip the **entire content** of the archive to the (initially empty) `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and *any other folders* in the same directory in the zip file.
 
