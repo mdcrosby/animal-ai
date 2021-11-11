@@ -92,6 +92,7 @@ Further the documentation for [mlagents](https://github.com/Unity-Technologies/m
   - Added 3 animal skins to the player character.
   - Updated graphics for many objects. Default shading on many previously plain objects make it easier to determine location(s)/velocity.
   - Many improvements to documentation and examples.
+  - Upgraded to Mlagents 2.1.0-exp.1 (ml-agents python version 0.27.0)
   - Fixed various bugs.
 - v2.2.3
   - Now you can specify multiple different arenas in a single yml config file ant the environment will cycle through them each time it resets
