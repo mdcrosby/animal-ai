@@ -84,6 +84,13 @@ Further the documentation for [mlagents](https://github.com/Unity-Technologies/m
 
 ## Version History
 
+- v3.0 **Note that due to the changes to controls and graphics agents trained on previous versions might not preform the same**
+  - Updated agent handling. The agent now comes to a stop more quickly when not moving forwards or backwards and accelerates slightly faster.
+  - Added new objects, spawners, signs, goal types (see [doc](docs/definitionsOfObjects.md)) 
+  - Added 3 animal skins to the player character.
+  - Updated graphics for many objects. Default shading on many previously plain objects make it easier to determine location(s)/velocity.
+  - Many improvements to documentation and examples.
+  - Fixed various bugs.
 - v2.2.3
   - Now you can specify multiple different arenas in a single yml config file ant the environment will cycle through them each time it resets
 - v2.2.2 
