@@ -103,13 +103,13 @@ The `ShrinkGoal` and `GrowGoal` does not actually use the `sizes` parameter that
 An *animal skin* has also been used - in this case, the Agent will always spawn as a hedgehog.
 
 <p align="center">
-  <img width="700" src="PrefabsPictures/Rewards/decay-sizechange-goal-test.PNG">
+  <img width="700" src="ExampleGallery/decay-sizechange-goal-test.PNG">
 </p>
 
 After a few seconds, the changed goals will look as follows:
 
 <p align="center">
-  <img width="700" src="PrefabsPictures/Rewards/decay-sizechange-goal-test-changes.PNG">
+  <img width="700" src="ExampleGallery/decay-sizechange-goal-test-changes.PNG">
 </p>
 
 &nbsp;
@@ -153,7 +153,7 @@ arenas:
 This example demonstrates the use of preset symbols declared as the list `symbolNames`, a unique parameter for SignPosterboard objects. Each symbol has a default colour that can be overridden using the `colors` list (but in this example, default colours are used).
 
 <p align="center">
-  <img height="300" src="PrefabsPictures/Other-Unique/SignPosterboard-preset-symbols.PNG">
+  <img height="300" src="ExampleGallery/SignPosterboard-preset-symbols.PNG">
 </p>
 
 &nbsp;
@@ -199,7 +199,7 @@ This example demonstrates the use of *special codes* to generate black-and-white
 Fully-random grids can be generated using the code `"MxN"`, where `M` and `N` are the grid width and height dimensions respectively.
 
 <p align="center">
-  <img height="300" src="PrefabsPictures/Other-Unique/SignPosterboard-special-symbols-annotated.png">
+  <img height="300" src="ExampleGallery/SignPosterboard-special-symbols-annotated.png">
 </p>
 
 &nbsp;
@@ -209,7 +209,11 @@ Fully-random grids can be generated using the code `"MxN"`, where `M` and `N` ar
 Below are some more creative examples of test environments created by config files.
 
 <p align="center">
-  <img width="750" src="PrefabsPictures/TestCompetition02-28-02.PNG">
+  <img width="750" src="ExampleGallery/TestCompetition02-28-02.PNG">
+</p>
+
+<p align="center">
+  <img width="750" src="ExampleGallery/TestCompetition10-13-01.PNG">
 </p>
 
 &nbsp;
