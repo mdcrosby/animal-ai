@@ -30,6 +30,8 @@ To get started you will need to:
 | Mac | [v3.0](http://mdcrosby.com/builds/AnimalAI_MAC_3.0.zip) |
 | Windows | [v3.0](http://mdcrosby.com/builds/AnimalAI_WINDOWS_3.0.zip) |
 
+(Old v2.x versions can be found [here](docs/oldVersions.md))
+
 Unzip the **entire content** of the archive to the (initially empty) `env` folder. On linux you may have to make the file executable by running `chmod +x env/AnimalAI.x86_64`. Note that the env folder should contain the AnimalAI.exe/.x86_84/.app depending on your system and *any other folders* in the same directory in the zip file.
 
 ## Tutorials and Examples
