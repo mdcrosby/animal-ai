@@ -22,7 +22,7 @@ The AnimalAI environment and packages are currently only tested on linux (Ubuntu
 To get started you will need to:
 1. Clone this repo.
 2. **Install the animalai python package** and requirements by running `pip install -e animalai` from the root folder.
-3. **download the environment** for your system:
+3. **Download the environment** for your system:
 
 | OS | Environment link |
 | --- | --- |
