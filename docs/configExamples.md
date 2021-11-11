@@ -203,3 +203,13 @@ Fully-random grids can be generated using the code `"MxN"`, where `M` and `N` ar
 </p>
 
 &nbsp;
+
+### EXAMPLE GALLERY
+
+Below are some more creative examples of test environments created by config files.
+
+<p align="center">
+  <img width="750" src="PrefabsPictures/TestCompetition02-28-02.PNG">
+</p>
+
+&nbsp;
