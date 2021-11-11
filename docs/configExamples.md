@@ -103,11 +103,13 @@ The `ShrinkGoal` and `GrowGoal` does not actually use the `sizes` parameter that
 An *animal skin* has also been used - in this case, the Agent will always spawn as a hedgehog.
 
 <p align="center">
-  <img height="300" src="PrefabsPictures/Other-Unique/decay-sizechange-goal-test.PNG">
+  <img width="700" src="PrefabsPictures/Rewards/decay-sizechange-goal-test.PNG">
 </p>
 
+After a few seconds, the changed goals will look as follows:
+
 <p align="center">
-  <img height="300" src="PrefabsPictures/Other-Unique/decay-sizechange-goal-test-changes.PNG">
+  <img width="700" src="PrefabsPictures/Rewards/decay-sizechange-goal-test-changes.PNG">
 </p>
 
 &nbsp;
