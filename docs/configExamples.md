@@ -1,8 +1,7 @@
+
 # Detailed examples
 
 Let's take a look at some examples:
-
-&nbsp;
 
 ### EXAMPLE 1 - Standard Parameters & Randomisation
 ```
@@ -42,7 +41,78 @@ In this case this will lead to (in order that they will spawn):
 
 &nbsp;
 
-### EXAMPLE 2 - SignPosterboard (Preset Symbols)
+### EXAMPLE 2 - Decay Goals / Size-Changing Goals
+```
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 0
+    t: 250
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !Vector3 {x: 10, y: 0, z: 20}
+      rotations: [90]
+      skins:
+      - "hedgehog"
+    - !Item
+      name: ShrinkGoal
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 11}
+      sizes:
+      - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
+      symbolNames:
+      - "left-arrow"
+      initialValues: [2.5]
+      finalValues: [1.5]
+      delays: [400]
+      changeRates: [-0.2]
+    - !Item
+      name: DecayGoal
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 17}
+      initialValues: [4]
+      finalValues: [3]
+      delays: [250]
+      changeRates: [-0.003]
+    - !Item
+      name: AntiDecayGoal
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 23}
+      sizes:
+      - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
+      initialValues: [1]
+      finalValues: [1.5]
+      delays: [300]
+      changeRates: [-0.007]
+    - !Item
+      name: GrowGoal
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 29}
+      initialValues: [1]
+      finalValues: [3.5]
+      delays: [100]
+      changeRates: [0.01]
+```
+
+This example features goals that decay, grow, shrink and 'ripen' (anti-decay). Each `Item` also has some invalid *red-herring* parameters that are used incorrectly but will not affect the outcome, nor crash the AAI environment.
+
+The `ShrinkGoal` and `GrowGoal` does not actually use the `sizes` parameter that has been declared, but changes size according to the `initialValues` and `finalValues`.  Similarly, the size of the `DecayGoal` and `AntiDecayGoal` are given by `max(initialValue, finalValue)`, and the reward changes from `initial` to `final` over time. The `ShrinkGoal` even has an incorrectly-used `symbolNames` parameter, which are for `SignPosterboard` objects only - this is ignored.
+
+An *animal skin* has also been used - in this case, the Agent will always spawn as a hedgehog.
+
+<p align="center">
+  <img height="300" src="PrefabsPictures/Other-Unique/decay-sizechange-goal-test.PNG">
+</p>
+
+<p align="center">
+  <img height="300" src="PrefabsPictures/Other-Unique/decay-sizechange-goal-test-changes.PNG">
+</p>
+
+&nbsp;
+
+### EXAMPLE 3 - SignPosterboard (Preset Symbols)
 ```
 !ArenaConfig
 arenas:
@@ -86,7 +156,7 @@ This example demonstrates the use of preset symbols declared as the list `symbol
 
 &nbsp;
 
-### EXAMPLE 3 - SignPosterboard (Special Symbols)
+### EXAMPLE 4 - SignPosterboard (Special Symbols)
 ```
 !ArenaConfig
 arenas:
