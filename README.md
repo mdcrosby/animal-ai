@@ -91,6 +91,7 @@ Further the documentation for [mlagents](https://github.com/Unity-Technologies/m
   - Added new objects, spawners, signs, goal types (see [doc](docs/definitionsOfObjects.md)) 
   - Added 3 animal skins to the player character.
   - Updated graphics for many objects. Default shading on many previously plain objects make it easier to determine location(s)/velocity.
+  - Made the Unity Environment available (see link on main page).
   - Many improvements to documentation and examples.
   - Upgraded to Mlagents 2.1.0-exp.1 (ml-agents python version 0.27.0)
   - Fixed various bugs.
