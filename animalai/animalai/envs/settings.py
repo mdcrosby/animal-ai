@@ -8,13 +8,14 @@ from mlagents.trainers.exception import TrainerConfigError
 
 @attr.s(auto_attribs=True)
 class AAIOptions():
-    arenaConfig: str = attr.ib()
-    useCamera: bool = attr.ib()
-    resolution: int = attr.ib()
-    grayscale: bool = attr.ib()
-    useRayCasts: bool = attr.ib()
-    raysPerSide: int = attr.ib()
-    rayMaxDegrees: int = attr.ib()
+    """The options used by the animalai environment"""
+    arenaConfig: str = attr.ib() #The path of a valid arena config yaml file
+    useCamera: bool = attr.ib() #If true, then camera observations are returned
+    resolution: int = attr.ib() #The (square) resolution of camera observations (if useCamera is true)
+    grayscale: bool = attr.ib() #If the camera observations are grayscale or RGB
+    useRayCasts: bool = attr.ib() #If true, then raycast observations are returned
+    raysPerSide: int = attr.ib() #The number of rays on each side of the central ray (see observations doc)
+    rayMaxDegrees: int = attr.ib() #The number of degrees between the central ray and furthest ray in each direction.
 
     @staticmethod
     def load_config(config_path) -> "AAIOptions":
