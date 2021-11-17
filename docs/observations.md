@@ -6,7 +6,7 @@ The agent currently has access to a Camera, Raycasts, and Extra Observations. Yo
 
 ## Camera Observations
 
-With the camera enabled (via useCamera) the agent receives 1st-person pixel observations of its environment with configurable resolution. Grayscale can be toggled on/off. 
+With the camera enabled (via useCamera) the agent receives 1st-person pixel observations of its environment with configurable (square) resolution (via resolution parameter). Grayscale can be toggled on/off. 
 
 ## Raycast observations
 
