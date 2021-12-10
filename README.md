@@ -17,7 +17,9 @@ The AnimalAI environment and packages are currently only tested on linux (Ubuntu
 **The Unity Project** for the environment is available [here](https://github.com/mdcrosby/animal-ai-unity-project).
 
 
-## Installing
+## Quick Install
+
+*see [here](docs/installationGuide.md) for a more detailed installation guide, including information on Python/pip/conda and using the command line during installation*
 
 To get started you will need to:
 1. Clone this repo.
