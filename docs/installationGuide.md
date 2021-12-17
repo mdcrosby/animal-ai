@@ -9,7 +9,10 @@ This guide is *currently* designed predominantly for Windows users; a more detai
 We recommend a newer version of Python be installed, but any version 3.x is fine. Python is generally easy to install:
 * [Download](https://www.python.org/downloads/) -- default `.exe` download is fine, but unpacking a `.zip` download or Mac `.pkg` will also work
 * Run the download and follow the installation guide. Default installation settings are fine, but it is recommended to tick the `"Add to PATH"` box, so that Python can be run via the Windows Command Prompt by typing 'python' in any directory:
-<img align="middle" width="400" src="InstallationGuide_screenshots/python-installation-Add_to_PATH.PNG">
+<p align="center">
+  <img width="400" src="InstallationGuide_screenshots/python-installation-Add_to_PATH.PNG">
+</p>
+
 * If you're doing a custom intallation, it is recommended to keep the "install pip" box ticked and use `pip` to install dependencies later on -- but you can use an alternative method e.g. `conda`
 
 ### AnimalAI v3 Repository
@@ -56,7 +59,9 @@ Everything you need to run scripts in AnimalAI v3 (including the correct version
 Find the Windows/Mac/Linux environment download links as seen in `README.md`, and download a `.zip` copy of the environment according to your operating system. The **entire content** of the `.zip` download needs to then be extracted/unzipped into the `env` folder found in the main repository (along with `configs`, `docs`, `examples` and so on...)
 
 Sometimes `.zip` folders unzip themselves into their own sub-folder, so it can get a bit confusing. Your `env` should look like this:
-<img align="middle" width="400" src="InstallationGuide_screenshots/aai_installation_env_contents.PNG">
+<p align="center">
+  <img width="400" src="InstallationGuide_screenshots/aai_installation_env_contents.PNG">
+</p>
 
 In other words, the AnimalAI Unity `.exe` should be directly contained in the `env` folder along with everything else from the `.zip` contents.
 
