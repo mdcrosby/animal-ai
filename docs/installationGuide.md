@@ -29,13 +29,13 @@ Virtual environments in Python are useful for managing packages for separate pro
 
 To create one for AnimalAI:
 * Using Python directly:
--- Open a Command Prompt terminal and navigate to a convenient folder (`:C\`, `:C\Users\Name` and `:C\Users\Name\NewlyCreatedAAIRootFolder` are all good choices!)
--- Type `python -m venv your_env_name`, where `your_env_name` can be anything you like e.g. "AAI_venv", so long as it doesn't contain spaces
--- To use the virtual environment, navigate to its folder, then type `cd Scripts`, then `activate`. Your Command Prompt should now show your virtual environment name next to the directory you are in
+    * Open a Command Prompt terminal and navigate to a convenient folder (`:C\`, `:C\Users\Name` and `:C\Users\Name\NewlyCreatedAAIRootFolder` are all good choices!)
+    * Type `python -m venv your_env_name`, where `your_env_name` can be anything you like e.g. "AAI_venv", so long as it doesn't contain spaces
+    * To use the virtual environment, navigate to its folder, then type `cd Scripts`, then `activate`. Your Command Prompt should now show your virtual environment name next to the directory you are in
 
 * For **[conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)** users:
--- In any directory run `conda create --name your_env_name` and by default it will be created in the `envs` folder wherever you have installed conda
--- To activate it, type `conda activate your_env_name`
+    * In any directory run `conda create --name your_env_name` and by default it will be created in the `envs` folder wherever you have installed conda
+    * To activate it, type `conda activate your_env_name`
 
 **Note:** folder navigation in Windows is performed using the `cd` command, e.g. if the current directory is shown as `:C\Users\Name` and you want to go to your new AAI root folder called "AAI", you would type `cd AAI` and it will now show you are at `:C\Users\Name\AAI`. To go to the *parent* directory (e.g. in this case `:C\Users`), you would type `cd..` and if your directory name contains spaces, use speech marks e.g. `cd "AAI Folder"` 
 
@@ -46,10 +46,10 @@ Everything you need to run scripts in AnimalAI v3 (including the correct version
 * Open a Command Prompt terminal and, if you are using a virtual environment, make sure to `activate` the environment first! (See above)
 * Navigate to your AAI root folder, then go to your cloned repository "animal-ai-main" (or whatever you named it)
 * If using **pip**:
--- Run `pip install -e animalai` (if this doesn't work, ensure pip is installed correctly; `pip --version` shows the version you have installed to confirm this)
+    * Run `pip install -e animalai` (if this doesn't work, ensure pip is installed correctly; `pip --version` shows the version you have installed to confirm this)
 * If using **conda**:
--- AnimalAI does not have a package build that is directly compatible with conda itself, but you can still install it indirectly for use in conda
--- Run `conda install pip` then (making sure you're in the main repository folder as instructed above) run `pip install -e animalai` as described for pip users
+    * AnimalAI does not have a package build that is directly compatible with conda itself, but you can still install it indirectly for use in conda
+    * Run `conda install pip` then (making sure you're in the main repository folder as instructed above) run `pip install -e animalai` as described for pip users
 
 ### Downloading the AAI Environment
 
