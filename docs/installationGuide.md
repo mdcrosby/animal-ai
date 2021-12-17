@@ -48,7 +48,8 @@ Everything you need to run scripts in AnimalAI v3 (including the correct version
 * If using **pip**:
 -- Run `pip install -e animalai` (if this doesn't work, ensure pip is installed correctly; `pip --version` shows the version you have installed to confirm this)
 * If using **conda**:
--- Run `conda install -e animalai`
+-- AnimalAI does not have a package build that is directly compatible with conda itself, but you can still install it indirectly for use in conda
+-- Run `conda install pip` then (making sure you're in the main repository folder as instructed above) run `pip install -e animalai` as described for pip users
 
 ### Downloading the AAI Environment
 
