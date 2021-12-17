@@ -2,7 +2,7 @@
 
 This is a more detailed installation guide for AnimalAI v3, written for users who don't have lots of experience with python dependencies, Github repositories, and/or Unity -- or in case you run into trouble with the installation *(it's custom software installation... when **isn't** there a bug or two?)*
 
-This guide is *currently* designed predominantly for Windows users; a more detailed Mac installation guide is a work-in-progress, but most of the guide will still be useful nonetheless. Linux users tend to have stronger command-line-interface/installation experience (this coming from a Windows user!) so the quick install guide on `README.md` should be sufficient -- but please get in touch (jsh81@cam.ac.uk / @thanksphil GitHub) should you run into trouble.
+This guide is *currently* designed predominantly for Windows users; a more detailed Mac installation guide is a work-in-progress, but most of the guide will still be useful nonetheless. Linux users tend to have stronger command-line-interface/installation experience (this coming from a Windows user!) so the quick install guide on `README.md` should be sufficient -- but please get in touch (jsh81@cam.ac.uk / [thanksphil](https://github.com/thanksphil/) GitHub) should you run into trouble.
 
 ### Installing Python
 
@@ -65,4 +65,4 @@ Sometimes `.zip` folders unzip themselves into their own sub-folder, so it can g
 
 In other words, the AnimalAI Unity `.exe` should be directly contained in the `env` folder along with everything else from the `.zip` contents.
 
-You can then start using AnimalAI v3! Any problems, please get in touch (jsh81@cam.ac.uk / @thanksphil GitHub) and we can try to help.
+You can then start using AnimalAI v3! Any problems, please get in touch (jsh81@cam.ac.uk / [thanksphil](https://github.com/thanksphil/) GitHub) and we can try to help.
