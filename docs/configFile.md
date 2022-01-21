@@ -4,7 +4,7 @@
 
 ## TL;DR
 
-From the `examples` folder, run `python play.py configs/competition/10-26-01.yaml` to get an understanding of how the `YAML` files configure the 
+From the `examples` folder, run `python play.py ../configs/competition/10-26-01.yaml` to get an understanding of how the `YAML` files configure the 
 arenas for training. You will find a list of all objects you can add to an arena as well as the values for their parameters in [the definitions](definitionsOfObjects.md). You will find below all the technical details to create more complex training configurations.
 
 ## Intro
