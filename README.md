@@ -28,9 +28,9 @@ To get started you will need to:
 
 | OS | Environment link |
 | --- | --- |
-| Linux |  [v3.0](http://mdcrosby.com/builds/AnimalAI_LINUX_3.0.zip) |
-| Mac | [v3.0](http://mdcrosby.com/builds/AnimalAI_MAC_3.0.zip) |
-| Windows | [v3.0](http://mdcrosby.com/builds/AnimalAI_WINDOWS_3.0.zip) |
+| Linux |  [v3.0.1](https://kv301.user.srcf.net/wp-content/uploads/2022/04/AAI_v3.0.1_build_linux_090422.zip) |
+| Mac | [v3.0.1](https://kv301.user.srcf.net/wp-content/uploads/2022/04/AAI_v3.0.1_build_macOS_090422.zip) |
+| Windows | [v3.0.1](https://kv301.user.srcf.net/wp-content/uploads/2022/04/AAI_v3.0.1_build_windows_090422.zip) |
 
 (Old v2.x versions can be found [here](docs/oldVersions.md))
 
@@ -88,6 +88,8 @@ Further the documentation for [mlagents](https://github.com/Unity-Technologies/m
 
 ## Version History
 
+- v3.0.1
+  - Added Agent Freezing Parameter, enabling you to freeze the agent for no reward decrement at the start of an episode, while other objects continue to move around.
 - v3.0 **Note that due to the changes to controls and graphics agents trained on previous versions might not preform the same**
   - Updated agent handling. The agent now comes to a stop more quickly when not moving forwards or backwards and accelerates slightly faster.
   - Added new objects, spawners, signs, goal types (see [doc](docs/definitionsOfObjects.md)) 

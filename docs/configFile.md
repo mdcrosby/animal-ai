@@ -98,7 +98,10 @@ Some objects have unique/special parameters that only apply to them or a select 
 	- **applies to:** `SignPosterboard`
 	- **defaults to:** `"default"` (if no name or invalid name given)
 	- **preset list:** `"left-arrow"`, `"right-arrow"`, `"up-arrow"`, `"down-arrow"`, `"u-turn-arrow"`, `"letter-a"`, `"letter-b"`, `"letter-c"`, `"square"`, `"triangle"`, `"circle"`, `"star"`, `"tick"`, `"cross"`
-
+- `frozenAgentDelays`:
+	- a float that freezes the agent for the specified number of frames at the start of an episode. There is no reward decrement during the frozen period, and all other objects continue to move and interact.
+	- **applies to:** `Agent` only
+	- **defaults to:** `0`
 
 ## Blackouts
 
