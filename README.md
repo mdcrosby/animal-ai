@@ -8,7 +8,7 @@ AAI supports interdisciplinary research to help better understand human, animal,
 
 ## This Repo
 
-This repo contains the AnimalAI environment, some introductory python scripts for interacting with it, as well as the [900 tasks](competition_configurations) which were used in the original Animal-AI Olympics competition (and some others for demonstration purposes). Details of the tasks can be found on the [AAI website](http://animalai.org) where they can also be played and competition entries watched.
+This repo contains the AnimalAI environment, some introductory python scripts for interacting with it, as well as the [900 tasks](configs/competition) which were used in the original Animal-AI Olympics competition (and some others for demonstration purposes). Details of the tasks can be found on the [AAI website](http://animalai.org) where they can also be played and competition entries watched.
 
 The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) release 2.1.0-exp.1 (python version 0.27.0).
 
