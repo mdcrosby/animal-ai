@@ -1,3 +1,14 @@
+# Deprecated - New Home [Here](https://github.com/Kinds-of-Intelligence-CFI/animal-ai).
+
+:bangbang: :no_entry: THIS REPOSITORY IS NO LONGER BEING MAINTAINED OR MONITORED. :no_entry: :bangbang:
+
+We have relocated this repository to a [new home](https://github.com/Kinds-of-Intelligence-CFI/animal-ai). Further updates and releases will be published there.
+
+
+~
+~
+
+
 # AnimalAI 3
 
 AAI supports interdisciplinary research to help better understand human, animal, and artificial cognition. It aims to support AI research towards unlocking cognitive capabilities and better understanding the space of possible minds. It is designed to facilitate testing across animals, humans, and AI.
