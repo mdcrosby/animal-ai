@@ -12,7 +12,7 @@ This repo contains the AnimalAI environment, some introductory python scripts fo
 
 The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) release 2.1.0-exp.1 (python version 0.27.0).
 
-The AnimalAI environment and packages are currently only tested on linux (Ubuntu 20.04.2 LTS) with python 3.8 but have been reported working with python 3.6+, other linux distros and Windows and Mac.
+The AnimalAI environment and packages are currently only tested on **Windows 11** and **Mac**, with **Python 3.8** but have been reported working with python 3.6+. **Linux distros** are also working and stable (Linux OS was used for testing during previous development stages).
 
 **The Unity Project** for the environment is available [here](https://github.com/Kinds-of-Intelligence-CFI/animal-ai-unity-project).
 
