@@ -10,9 +10,9 @@ AAI supports interdisciplinary research to help better understand human, animal,
 
 This repo contains the AnimalAI environment, some introductory python scripts for interacting with it, as well as the [900 tasks](configs/competition) which were used in the original Animal-AI Olympics competition (and some others for demonstration purposes). Details of the tasks can be found on the [AAI website](http://animalai.org) where they can also be played and competition entries watched.
 
-The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) release 2.1.0-exp.1 (python version 0.27.0).
+The environment is built using [Unity ml-agents](https://github.com/Unity-Technologies/ml-agents/tree/master/docs) **Release 20-stable (Python version 0.30.0)**. **Unity** (game engine) is the engine used to develop the platform.
 
-The AnimalAI environment and packages are currently only tested on **Windows 11** and **Mac**, with **Python 3.8** but have been reported working with python 3.6+. **Linux distros** are also working and stable (Linux OS was used for testing during previous development stages).
+The AnimalAI environment and packages are currently only tested on **Windows 11** and **Mac**, with **Python 3.8** stable, but Python 3.6+ has reported to be working also. **Linux distros** are also working and stable (Linux OS was used for testing during previous development stages).
 
 **The Unity Project** for the environment is available [here](https://github.com/Kinds-of-Intelligence-CFI/animal-ai-unity-project).
 
